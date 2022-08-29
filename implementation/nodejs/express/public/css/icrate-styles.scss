@@ -116,7 +116,11 @@ footer#icrate-wrapper-footer {
     bottom: 0px;
 
     min-height: $footer-height;
-    width: inherit;
+
+    left: calc(2 * $atomic-space-factor);
+    right: calc(2 * $atomic-space-factor);
+
+    border-top: 0.5px solid black;
 
     p {
         @include flex-centered-horizontal;
@@ -124,6 +128,13 @@ footer#icrate-wrapper-footer {
         padding: calc(3 * $atomic-space-factor);
         margin-block-start: 0;
         margin-block-end: 0;
+
+        i,
+        b {
+            display: flex;
+            margin: auto calc(2 * $atomic-space-factor);
+            font-size: $ci-font-size-big;
+        }
 
         a {
             margin-left: calc(2 * $atomic-space-factor);
