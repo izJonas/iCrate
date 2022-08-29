@@ -1,8 +1,28 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	y="0px" viewBox="0 0 512.001 512.001" style="enable-background:new 0 0 512.001 512.001;" xml:space="preserve">
+	<defs>
+		<style>
+			.icrate-cursor-pointer-pri {
+				fill: #d3aa61ff;
+			}
+
+			.icrate-cursor-pointer-pri-shadow {
+				fill: #dfbe7aff;
+			}
+
+			.icrate-cursor-pointer-sec {
+				fill: #f3d98fff;
+			}
+
+			.icrate-cursor-pointer-sec-shadow {
+				fill: #dab678ff;
+			}
+		</style>
+	</defs>
 	<polygon style="fill:#CFF09E;" points="167.546,473.728 174.833,112.185 449.789,347.061 283.379,354.048 " />
-	<g class="">
+	<g class="icrate-cursor-click-group">
 		<path style="fill:#507C5C;" d="M459.05,336.218L184.096,101.342c-4.19-3.579-10.07-4.425-15.1-2.167
 		c-5.029,2.257-8.308,7.211-8.419,12.722L153.29,473.44c-0.118,5.861,3.362,11.198,8.774,13.451
 		c1.774,0.739,3.633,1.097,5.479,1.097c3.789,0,7.509-1.512,10.25-4.344l77.772-80.355l45.008,100.287
