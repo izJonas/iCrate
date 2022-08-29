@@ -1,7 +1,20 @@
 /*Image URLs */
 /* Corporate Identity */
 @import url("https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap");
-#icrate-wrapper-main {
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  box-sizing: content-box;
+}
+
+main#icrate-wrapper-main {
   display: flex;
   background-image: url("/img/icrate-bg-01.jpg");
   background-repeat: repeat;
@@ -14,32 +27,40 @@
   /* Application Views */
   /* Responsiveness */
 }
-#icrate-wrapper-main .icreate-input-text,
-#icrate-wrapper-main .icreate-input-textarea,
-#icrate-wrapper-main .icreate-input-select,
-#icrate-wrapper-main .icreate-input-password {
+main#icrate-wrapper-main .icreate-input-text,
+main#icrate-wrapper-main .icreate-input-textarea,
+main#icrate-wrapper-main .icreate-input-select,
+main#icrate-wrapper-main .icreate-input-password {
   border: 0.5px solid black;
   padding: 3px;
   min-width: 125px;
 }
-#icrate-wrapper-main .icrate-button-submit {
+main#icrate-wrapper-main .icrate-button-submit {
   border: 0.5px solid black;
   padding: 3px;
   min-width: 125px;
 }
-#icrate-wrapper-main [id^=icrate-wrapper-] {
+main#icrate-wrapper-main [id^=icrate-wrapper-] {
   display: flex;
   margin: 75px auto;
 }
-#icrate-wrapper-main #icrate-wrapper-app[class*=-customer] *[class*=-iz],
-#icrate-wrapper-main #icrate-wrapper-app[class*=-customer] *[id$=-iz] {
+main#icrate-wrapper-main #icrate-wrapper-login {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+  margin-bottom: calc(2em + 25px);
+  height: calc(100% - 4em - 25px);
+}
+main#icrate-wrapper-main #icrate-wrapper-app[class*=-customer] *[class*=-iz],
+main#icrate-wrapper-main #icrate-wrapper-app[class*=-customer] *[id$=-iz] {
   display: none;
 }
-#icrate-wrapper-main #icrate-wrapper-app[class*=-iz]::after {
+main#icrate-wrapper-main #icrate-wrapper-app[class*=-iz]::after {
   content: "impact-z.one internal use only!";
 }
 @media (max-width: 479px) {
-  #icrate-wrapper-main {
+  main#icrate-wrapper-main {
     /* Unauthenticated */
     /* Authenticated */
     /* Konfiguration Sitelist */
@@ -48,7 +69,7 @@
   }
 }
 @media (min-width: 480px) and (max-width: 767px) {
-  #icrate-wrapper-main {
+  main#icrate-wrapper-main {
     /* Unauthenticated */
     /* Authenticated */
     /* Konfiguration Sitelist */
@@ -57,7 +78,7 @@
   }
 }
 @media (min-width: 480px) {
-  #icrate-wrapper-main {
+  main#icrate-wrapper-main {
     /* Unauthenticated */
     /* Authenticated */
     /* Konfiguration Sitelist */
@@ -66,7 +87,7 @@
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  #icrate-wrapper-main {
+  main#icrate-wrapper-main {
     /* Unauthenticated */
     /* Authenticated */
     /* Konfiguration Sitelist */
@@ -75,7 +96,7 @@
   }
 }
 @media (min-width: 768px) {
-  #icrate-wrapper-main {
+  main#icrate-wrapper-main {
     /* Unauthenticated */
     /* Authenticated */
     /* Konfiguration Sitelist */
@@ -84,7 +105,7 @@
   }
 }
 @media (min-width: 1024px) {
-  #icrate-wrapper-main {
+  main#icrate-wrapper-main {
     /* Unauthenticated */
     /* Authenticated */
     /* Konfiguration Sitelist */
@@ -95,13 +116,33 @@
 
 /* Footer Section */
 footer#icrate-wrapper-footer {
+  display: flex;
   position: fixed;
   bottom: 0px;
-  height: 100px;
+  min-height: 25px;
+  width: inherit;
+}
+footer#icrate-wrapper-footer p {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 9px;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+}
+footer#icrate-wrapper-footer p a {
+  margin-left: 6px;
 }
 footer#icrate-wrapper-footer p::before {
-  background-image: url("/img/icrate-iz-insignia-anthrazit.png");
+  display: flex;
+  width: 28px;
+  height: 28px;
+  margin-top: -6px;
+  margin-right: 6px;
+  background-image: url("/img/icrate-iz-logo-anthrazit.png");
   background-repeat: no-repeat;
   background-size: contain;
-  content: "&nbsp;";
+  content: "";
 }/*# sourceMappingURL=icrate-styles.css.map */

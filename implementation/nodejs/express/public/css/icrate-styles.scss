@@ -1,10 +1,19 @@
-@import "scss/icrate-variables";
-@import "scss/icrate-media-mixins";
-@import "scss/icrate-entity-mixins";
-@import "scss/icrate-perk-mixins";
+@import "../../scss/icrate-variables";
+@import "../../scss/icrate-media-mixins";
+@import "../../scss/icrate-entity-mixins";
+@import "../../scss/icrate-perk-mixins";
+
+body {
+    margin: 0;
+    padding: 0;
+
+    @include body-greedy-grow {
+        box-sizing: content-box;
+    }
+}
 
 // iCrate - Root Wrapper
-#icrate-wrapper-main {
+main#icrate-wrapper-main {
     display: flex;
     background-image: $icrate-background-01;
     background-repeat: repeat;
@@ -23,6 +32,12 @@
     /* Unauthenticated */
     // Login
     #icrate-wrapper-login {
+        @include flex-centered-horizontal {
+            margin-top: 2em;
+            margin-bottom: calc(2em + $footer-height);
+        }
+
+        height: calc(100% - 4em - $footer-height);
     }
 
     /* Authenticated */
@@ -86,23 +101,48 @@
     }
 
     /* Responsiveness */
-    @import "scss/icrate-responsive-tiny";
-    @import "scss/icrate-responsive-small";
-    @import "scss/icrate-responsive-medium";
-    @import "scss/icrate-responsive-large";
+    @import "../../scss/icrate-responsive-tiny";
+    @import "../../scss/icrate-responsive-small";
+    @import "../../scss/icrate-responsive-medium";
+    @import "../../scss/icrate-responsive-large";
 }
 
 /* Footer Section */
 // Wrapping the floating footer
 footer#icrate-wrapper-footer {
+    display: flex;
+
     position: fixed;
     bottom: 0px;
-    height: 100px;
+
+    min-height: $footer-height;
+    width: inherit;
+
+    p {
+        @include flex-centered-horizontal;
+
+        padding: calc(3 * $atomic-space-factor);
+        margin-block-start: 0;
+        margin-block-end: 0;
+
+        a {
+            margin-left: calc(2 * $atomic-space-factor);
+        }
+    }
 
     p::before {
-        background-image: $iz-insignia-anthrazit;
+        display: flex;
+
+        width: calc($footer-height + $atomic-space-factor);
+        height: calc($footer-height + $atomic-space-factor);
+
+        margin-top: calc(calc(2 * $atomic-space-factor) * -1);
+        margin-right: calc(2 * $atomic-space-factor);
+
+        background-image: $iz-logo-anthrazit;
         background-repeat: no-repeat;
         background-size: contain;
-        content: "&nbsp;";
+
+        content: "";
     }
 }
