@@ -85,24 +85,24 @@
         }
     }
 
-    /* Footer Section */
-    // Wrapping the floating footer
-    #icrate-footer-wrapper {
-        position: fixed;
-        bottom: 0px;
-        height: 100px;
-
-        p::before {
-            background-image: $iz-insignia-anthrazit;
-            background-repeat: no-repeat;
-            background-size: contain;
-            content: "&nbsp;";
-        }
-    }
-
     /* Responsiveness */
     @import "scss/icrate-responsive-tiny";
     @import "scss/icrate-responsive-small";
     @import "scss/icrate-responsive-medium";
     @import "scss/icrate-responsive-large";
+}
+
+/* Footer Section */
+// Wrapping the floating footer
+footer#icrate-wrapper-footer {
+    position: fixed;
+    bottom: 0px;
+    height: 100px;
+
+    p::before {
+        background-image: $iz-insignia-anthrazit;
+        background-repeat: no-repeat;
+        background-size: contain;
+        content: "&nbsp;";
+    }
 }

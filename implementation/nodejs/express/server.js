@@ -16,7 +16,7 @@ const SetViewEngine = function () {
     // Set the pug view engine
     app.set('views', './views')
     app.set('view engine', 'pug')
-
+    app.use(express.static(__dirname + '/public'));
 }
 
 SetViewEngine()
@@ -44,7 +44,7 @@ const AfterMongoConnect = function (collectionToUse) {
         const cursor = db.collection('users').find().toArray()
             .then(results => {
                 console.log(results)
-                res.render('index', { title: 'iCrate by impcat-zone', message: 'iCrate - Login required', userlist: results })
+                res.render('icrate', { title: 'iCrate by impcat-zone', message: 'iCrate - Login required', userlist: results })
             })
             .catch(error => console.error(error))
 
