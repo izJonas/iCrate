@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><defs><style>.icrate-cursor-pointer-pri{fill: #d3aa61ff;}.icrate-cursor-pointer-pri-shadow{fill: #dfbe7aff;}.icrate-cursor-pointer-sec{fill: #f3d98fff;}.icrate-cursor-pointer-sec-shadow{fill: #dab678ff;}</style></defs>
-<polygon style="fill:#CFF09E;" points="309.391,149.002 498.708,255.862 309.607,363.238 347.482,256.072 "/>
-<path style="fill:#507C5C;" d="M505.242,244.286l-189.319-106.86c-4.833-2.726-10.846-2.168-15.09,1.404
+<svg version="1.1" id="icrate-expand-horizontal" xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+	style="enable-background:new 0 0 512 512;" xml:space="preserve">
+	<defs>
+		<style>
+			.icrate-cursor-expand-horizontal-outline {
+				fill: #d3aa61ff;
+			}
+
+			.icrate-cursor-expand-horizontal-inner {
+				fill: #f3d98fff;
+			}
+		</style>
+	</defs>
+	<g id="icrate-expand-horizontal">
+		<polygon class="icrate-cursor-expand-horizontal-inner"
+			points="309.391,149.002 498.708,255.862 309.607,363.238 347.482,256.072 " />
+		<path class="icrate-cursor-expand-horizontal-outline" d="M505.242,244.286l-189.319-106.86c-4.833-2.726-10.846-2.168-15.09,1.404
 	c-4.244,3.57-5.826,9.401-3.966,14.627l22.983,64.602l-50.558,0.024v-93.674c0-7.341-5.951-13.292-13.292-13.292
 	c-7.341,0-13.292,5.951-13.292,13.292v93.689l-50.732,0.024l22.949-64.933c1.849-5.23,0.254-11.059-4-14.621
 	s-10.271-4.106-15.096-1.366L6.728,244.578c-4.164,2.365-6.734,6.787-6.728,11.575c0.005,4.789,2.588,9.205,6.758,11.559
@@ -17,35 +31,6 @@
 	l-5.499,15.558l-52.744,0.081c-7.341,0.011-13.283,5.972-13.272,13.312c0.011,7.335,5.96,13.272,13.292,13.272
 	c0.007,0,0.015,0,0.021,0l52.667-0.081l5.763,16.2l0,0l17.289,48.596L40.272,256.102z M334.002,334.101l22.85-64.655l52.744-0.081
 	c7.341-0.011,13.283-5.972,13.272-13.312c-0.011-7.335-5.96-13.272-13.292-13.272c-0.007,0-0.015,0-0.021,0l-52.667,0.081
-	l-23.052-64.796l137.89,77.832L334.002,334.101z"/>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
+	l-23.052-64.796l137.89,77.832L334.002,334.101z" />
+	</g>
 </svg>
