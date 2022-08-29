@@ -1,13 +1,23 @@
 doctype html
-html(lang='en')
+html(lang='de')
     head
         title= title
-        include head/meta
-        include head/scripts
-        block scripts
+
+        //- Meta Tags
+        meta(
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        )
+        meta(charset="UTF-8")
+
+        //- CSS Files
+        link(rel="stylesheet" href="/css/icrate-styles.css")
+
+        //- JavaScript files
+        script(src="/js/icrate-variables.js")
+        script(src="/js/icrate-functions.js")
+        script(src="/js/icrate-observers.js")
     body
         #icrate-wrapper-main
-            block content
-            block foot
-                #footer
-                    p some footer content
+            block icrate-content
+        include footer.pug

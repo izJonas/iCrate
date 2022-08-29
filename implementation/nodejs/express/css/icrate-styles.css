@@ -12,7 +12,21 @@
   /* Konfiguration Sitelist */
   /* Module Overview */
   /* Application Views */
+  /* Footer Section */
   /* Responsiveness */
+}
+#icrate-wrapper-main .icreate-input-text,
+#icrate-wrapper-main .icreate-input-textarea,
+#icrate-wrapper-main .icreate-input-select,
+#icrate-wrapper-main .icreate-input-password {
+  border: 0.5px solid black;
+  padding: 3px;
+  min-width: 125px;
+}
+#icrate-wrapper-main .icrate-button-submit {
+  border: 0.5px solid black;
+  padding: 3px;
+  min-width: 125px;
 }
 #icrate-wrapper-main [id^=icrate-wrapper-] {
   display: flex;
@@ -24,6 +38,17 @@
 }
 #icrate-wrapper-main #icrate-wrapper-app[class*=-iz]::after {
   content: "impact-z.one internal use only!";
+}
+#icrate-wrapper-main #icrate-footer-wrapper {
+  position: fixed;
+  bottom: 0px;
+  height: 100px;
+}
+#icrate-wrapper-main #icrate-footer-wrapper p::before {
+  background-image: url("/img/icrate-iz-insignia-anthrazit.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "&nbsp;";
 }
 @media (max-width: 479px) {
   #icrate-wrapper-main {

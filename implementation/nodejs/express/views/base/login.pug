@@ -1,0 +1,28 @@
+extends ../icreate.pug
+
+block icrate-content
+    main(id="icrate-wrapper-login")
+        form(
+            action="/login"
+            method="POST"
+        )
+            input(
+                type="text"
+                placeholder="name"
+                name="name"
+                class="icrate-input-text"
+            )
+            input(
+                type="password"
+                placeholder="password"
+                name="password"
+                class="icrate-input-password"
+            )
+            button(
+                type="submit"
+                ) Login
+
+        #quotes-wrapper
+            ul
+                each val in userlist
+                    li!= 'User <span class="quote-name">' + val['name'] + '</span> has the password: <span class="quote-content">' + val['password'] + '</span>'

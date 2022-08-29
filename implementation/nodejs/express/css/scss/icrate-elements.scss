@@ -1,0 +1,10 @@
+.icreate-input-text,
+.icreate-input-textarea,
+.icreate-input-select,
+.icreate-input-password {
+    @include icrate-input;
+}
+
+.icrate-button-submit {
+    @include icrate-button-submit;
+}

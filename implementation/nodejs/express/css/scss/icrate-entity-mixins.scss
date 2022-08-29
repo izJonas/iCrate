@@ -1,0 +1,27 @@
+@mixin icrate-input {
+    border: 0.5px solid black;
+    padding: 3px;
+    min-width: 125px;
+    @content;
+}
+
+@mixin icrate-button {
+    border: 0.5px solid black;
+    padding: 3px;
+    min-width: 125px;
+    @content;
+}
+
+@mixin icrate-button-ghost {
+    border: 0.5px solid black;
+    padding: 3px;
+    min-width: 125px;
+    @content;
+}
+
+@mixin icrate-button-submit {
+    border: 0.5px solid black;
+    padding: 3px;
+    min-width: 125px;
+    @content;
+}

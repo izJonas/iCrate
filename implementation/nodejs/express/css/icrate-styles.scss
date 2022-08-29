@@ -1,7 +1,5 @@
 @import "scss/icrate-variables";
 @import "scss/icrate-media-mixins";
-@import "scss/icrate-element-mixins";
-@import "scss/icrate-element-mixins";
 @import "scss/icrate-entity-mixins";
 @import "scss/icrate-perk-mixins";
 
@@ -13,6 +11,8 @@
 
     font-family: $ci-font-family-primary;
     font-size: $ci-font-size-medium;
+
+    @import "scss/icrate-elements";
 
     // Belonging to all Wrapper globally
     [id^="icrate-wrapper-"] {
@@ -82,6 +82,21 @@
 
         // Angebotserstellung: Einfügen von bestimmten Platzhalterfeldern (z.B. Datum) an einer oder mehreren Stellen einer Word-Vorlage.
         &.purchase-order-creator-iz {
+        }
+    }
+
+    /* Footer Section */
+    // Wrapping the floating footer
+    #icrate-footer-wrapper {
+        position: fixed;
+        bottom: 0px;
+        height: 100px;
+
+        p::before {
+            background-image: $iz-insignia-anthrazit;
+            background-repeat: no-repeat;
+            background-size: contain;
+            content: "&nbsp;";
         }
     }
 
