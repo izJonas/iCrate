@@ -3,6 +3,7 @@ console.log('May Node be with you')
 
 // express Framework gets loaded first
 const express = require('express');
+const path = require('path');
 const bodyParser = require('body-parser')
 const MongoClient = require('mongodb').MongoClient
 const app = express();
@@ -14,9 +15,18 @@ const connectionString = 'mongodb+srv://icrate-admin:test@cluster0.sjlt1ts.mongo
 
 const SetViewEngine = function () {
     // Set the pug view engine
-    app.set('views', './views')
+    //app.set('views', './views')
+    app.set('views', [path.join(__dirname, '/views'),
+        path.join(__dirname, '/views/base'),
+        path.join(__dirname, '/views/modular'),
+        path.join(__dirname, '/views/modular/apps'),
+        path.join(__dirname, '/views/modular/customer')])
+
     app.set('view engine', 'pug')
-    app.use(express.static(__dirname + '/public'));
+
+    app.locals.basedir = path.join(__dirname, 'views')
+
+    app.use(express.static(__dirname + '/public'))
 }
 
 SetViewEngine()
@@ -44,7 +54,7 @@ const AfterMongoConnect = function (collectionToUse) {
         const cursor = db.collection('users').find().toArray()
             .then(results => {
                 console.log(results)
-                res.render('icrate', { title: 'iCrate by impcat-zone', message: 'iCrate - Login required', userlist: results })
+                res.render('login', { title: 'iCrate by impcat-zone', message: 'iCrate - Login required', userlist: results })
             })
             .catch(error => console.error(error))
 

@@ -8,3 +8,14 @@
 .icrate-button-submit {
     @include icrate-button-submit;
 }
+
+input[type="text"],
+input[type="textarea"],
+input[type="password"],
+select {
+    padding: 3px;
+
+    &::placeholder {
+        letter-spacing: $atomic-space-factor;
+    }
+}

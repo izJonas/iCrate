@@ -8,36 +8,157 @@ body {
     padding: 0;
 
     @include body-greedy-grow {
-        box-sizing: content-box;
+        box-sizing: border-box;
+    }
+
+    @include ci-font-default {
+        color: white;
+        outline-color: white;
+        text-decoration-color: white;
+    }
+
+    button {
+        transition: all 1s ease-in 0.1s;
+
+        color: white;
+        filter: drop-shadow(0px 0px 0px $drop-button-shadow-from);
+        letter-spacing: calc($atomic-space-factor);
+
+        @include button-image-circle;
+
+        &::before {
+            transition: all 1s ease-in 0.1s;
+
+            opacity: 0;
+            color: #ffc000;
+            margin-right: 25%;
+
+            @include button-image-circle-before;
+
+            content: "L";
+        }
+
+        &:hover {
+            transition: all 1s ease-out 0.1s;
+
+            color: #ffc000;
+            filter: drop-shadow(5px 5px 5px $drop-button-shadow-to);
+            letter-spacing: calc(3 * $atomic-space-factor);
+
+            @include button-image-circle;
+
+            &::before {
+                transition: all 1s ease-out 0.1s;
+
+                opacity: 1;
+                color: white;
+                margin-right: 15%;
+
+                @include button-image-circle-before;
+
+                content: "L";
+            }
+        }
     }
 }
 
 // iCrate - Root Wrapper
 main#icrate-wrapper-main {
+    @import "../../scss/icrate-elements";
+
     display: flex;
     background-image: $icrate-background-01;
-    background-repeat: repeat;
+    background-repeat: no-repeat;
+    background-size: cover;
 
-    font-family: $ci-font-family-primary;
-    font-size: $ci-font-size-medium;
-
-    @import "../../scss/icrate-elements";
+    height: 100%;
 
     // Belonging to all Wrapper globally
     [id^="icrate-wrapper-"] {
         display: flex;
-        margin: 75px auto;
+        margin: 0 auto;
     }
 
     /* Unauthenticated */
     // Login
     #icrate-wrapper-login {
-        @include flex-centered-horizontal {
-            margin-top: 2em;
-            margin-bottom: calc(2em + $footer-height);
-        }
+        margin: 0;
+        flex-direction: column;
+        width: 100%;
 
         height: calc(100% - 4em - $footer-height);
+
+        section.icrate-login-banner-dynamic {
+            display: flex;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            border-bottom: 2px solid $ci-color-secondary;
+            box-sizing: border-box;
+
+            background-color: $ci-color-dark;
+
+            @include unify-dimension(height, 75px);
+
+            header.icrate-login-banner-text {
+                display: flex;
+                margin: auto;
+
+                &::before {
+                    display: flex;
+
+                    background-image: $iz-logo-gif;
+                    background-size: contain;
+
+                    @include unify-dimension(height, 60px);
+                    @include unify-dimension(width, 60px);
+
+                    content: "";
+                }
+
+                .icrate-product-name,
+                .icrate-auth-status,
+                .icrate-auth-result {
+                    margin: auto;
+                    padding-right: $space-for-header;
+                }
+
+                .icrate-product-name {
+                    border-right: $border-within-header;
+                    margin-right: $space-for-header;
+                    margin-left: $space-for-header;
+
+                    font-size: $ci-font-size-identifier;
+                    letter-spacing: $atomic-space-factor;
+                    font-weight: 900;
+                }
+                .icrate-auth-status {
+                }
+                .icrate-auth-result {
+                    display: none;
+                }
+            }
+        }
+
+        form {
+            @include flex-centered-horizontal {
+                margin: auto;
+            }
+            flex-direction: column;
+
+            input {
+                margin: calc(3 * $atomic-space-factor) auto auto auto;
+            }
+
+            button {
+                margin-top: calc(3 * $atomic-space-factor);
+                border: none;
+                background: $icrate-button-01 no-repeat;
+                background-size: contain;
+                @include unify-dimension(width, calc(calc(700px / 3) + 15px));
+                @include unify-dimension(height, calc(224px / 3));
+            }
+        }
     }
 
     /* Authenticated */
@@ -117,10 +238,12 @@ footer#icrate-wrapper-footer {
 
     min-height: $footer-height;
 
-    left: calc(2 * $atomic-space-factor);
-    right: calc(2 * $atomic-space-factor);
+    left: 0; //calc(2 * $atomic-space-factor);
+    right: 0; //calc(2 * $atomic-space-factor);
 
-    border-top: 0.5px solid black;
+    border-top: 2px solid $ci-color-primary;
+
+    background-color: $ci-color-dark;
 
     p {
         @include flex-centered-horizontal;
@@ -132,12 +255,32 @@ footer#icrate-wrapper-footer {
         i,
         b {
             display: flex;
-            margin: auto calc(2 * $atomic-space-factor);
+            margin: auto $space-for-footer;
             font-size: $ci-font-size-big;
+
+            border-right: $border-within-footer;
+            padding-right: $space-for-footer;
+            margin-right: $space-for-footer;
+
+            font-weight: bolder;
+
+            letter-spacing: 1px;
+        }
+
+        b.icrate-footer-name {
+            font-size: $ci-font-size-identifier;
+            letter-spacing: $atomic-space-factor;
+            font-weight: 900;
+        }
+
+        b:not(.icrate-footer-name) {
+            border-left: $border-within-footer;
+            padding-left: $space-for-footer;
+            margin-left: $space-for-footer;
         }
 
         a {
-            margin-left: calc(2 * $atomic-space-factor);
+            margin-left: $space-for-footer;
         }
     }
 
@@ -147,10 +290,10 @@ footer#icrate-wrapper-footer {
         width: calc($footer-height + $atomic-space-factor);
         height: calc($footer-height + $atomic-space-factor);
 
-        margin-top: calc(calc(2 * $atomic-space-factor) * -1);
-        margin-right: calc(2 * $atomic-space-factor);
+        margin-top: calc($atomic-space-factor * -1);
+        //margin-right: $space-for-footer;
 
-        background-image: $iz-logo-anthrazit;
+        background-image: $iz-logo-silver;
         background-repeat: no-repeat;
         background-size: contain;
 

@@ -7,19 +7,87 @@ body {
   width: 100%;
   max-width: 100%;
   min-width: 100%;
-  height: 100%;
-  max-height: 100%;
-  min-height: 100%;
+  height: calc(100vh - 43px);
+  max-height: calc(100vh - 43px);
+  min-height: calc(100vh - 43px);
   overflow: hidden;
+  box-sizing: border-box;
+  font-family: "Assistant", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2em;
+  color: white;
+  outline-color: white;
+  -webkit-text-decoration-color: white;
+          text-decoration-color: white;
+}
+body button {
+  transition: all 1s ease-in 0.1s;
+  color: white;
+  filter: drop-shadow(0px 0px 0px rgba(255, 192, 0, 0.1));
+  letter-spacing: 3px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+body button::before {
+  transition: all 1s ease-in 0.1s;
+  opacity: 0;
+  color: #ffc000;
+  margin-right: 25%;
+  display: flex;
+  width: 45px;
+  height: 45px;
+  margin-left: 10px;
+  font-weight: 900;
+  padding-left: 6px;
+  line-height: 25px;
+  font-size: 25px;
   box-sizing: content-box;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  content: "L";
+}
+body button:hover {
+  transition: all 1s ease-out 0.1s;
+  color: #ffc000;
+  filter: drop-shadow(5px 5px 5px rgb(237, 125, 49));
+  letter-spacing: 9px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+body button:hover::before {
+  transition: all 1s ease-out 0.1s;
+  opacity: 1;
+  color: white;
+  margin-right: 15%;
+  display: flex;
+  width: 45px;
+  height: 45px;
+  margin-left: 10px;
+  font-weight: 900;
+  padding-left: 6px;
+  line-height: 25px;
+  font-size: 25px;
+  box-sizing: content-box;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  content: "L";
 }
 
 main#icrate-wrapper-main {
   display: flex;
   background-image: url("/img/icrate-bg-01.jpg");
-  background-repeat: repeat;
-  font-family: "Assistant", sans-serif;
-  font-size: 12px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
   /* Unauthenticated */
   /* Authenticated */
   /* Konfiguration Sitelist */
@@ -40,17 +108,100 @@ main#icrate-wrapper-main .icrate-button-submit {
   padding: 3px;
   min-width: 125px;
 }
+main#icrate-wrapper-main input[type=text],
+main#icrate-wrapper-main input[type=textarea],
+main#icrate-wrapper-main input[type=password],
+main#icrate-wrapper-main select {
+  padding: 3px;
+}
+main#icrate-wrapper-main input[type=text]::-moz-placeholder, main#icrate-wrapper-main input[type=textarea]::-moz-placeholder, main#icrate-wrapper-main input[type=password]::-moz-placeholder, main#icrate-wrapper-main select::-moz-placeholder {
+  letter-spacing: 3px;
+}
+main#icrate-wrapper-main input[type=text]:-ms-input-placeholder, main#icrate-wrapper-main input[type=textarea]:-ms-input-placeholder, main#icrate-wrapper-main input[type=password]:-ms-input-placeholder, main#icrate-wrapper-main select:-ms-input-placeholder {
+  letter-spacing: 3px;
+}
+main#icrate-wrapper-main input[type=text]::placeholder,
+main#icrate-wrapper-main input[type=textarea]::placeholder,
+main#icrate-wrapper-main input[type=password]::placeholder,
+main#icrate-wrapper-main select::placeholder {
+  letter-spacing: 3px;
+}
 main#icrate-wrapper-main [id^=icrate-wrapper-] {
   display: flex;
-  margin: 75px auto;
+  margin: 0 auto;
 }
 main#icrate-wrapper-main #icrate-wrapper-login {
+  margin: 0;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100% - 4em - 25px);
+}
+main#icrate-wrapper-main #icrate-wrapper-login section.icrate-login-banner-dynamic {
+  display: flex;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-bottom: 2px solid #d3aa61;
+  box-sizing: border-box;
+  background-color: #040404;
+  height: 75px;
+  max-height: 75px;
+  min-height: 75px;
+}
+main#icrate-wrapper-main #icrate-wrapper-login section.icrate-login-banner-dynamic header.icrate-login-banner-text {
+  display: flex;
+  margin: auto;
+}
+main#icrate-wrapper-main #icrate-wrapper-login section.icrate-login-banner-dynamic header.icrate-login-banner-text::before {
+  display: flex;
+  background-image: url("/img/icrate-iz-logo-animated.gif");
+  background-size: contain;
+  height: 60px;
+  max-height: 60px;
+  min-height: 60px;
+  width: 60px;
+  max-width: 60px;
+  min-width: 60px;
+  content: "";
+}
+main#icrate-wrapper-main #icrate-wrapper-login section.icrate-login-banner-dynamic header.icrate-login-banner-text .icrate-product-name,
+main#icrate-wrapper-main #icrate-wrapper-login section.icrate-login-banner-dynamic header.icrate-login-banner-text .icrate-auth-status,
+main#icrate-wrapper-main #icrate-wrapper-login section.icrate-login-banner-dynamic header.icrate-login-banner-text .icrate-auth-result {
+  margin: auto;
+  padding-right: 12px;
+}
+main#icrate-wrapper-main #icrate-wrapper-login section.icrate-login-banner-dynamic header.icrate-login-banner-text .icrate-product-name {
+  border-right: 0.5px solid white;
+  margin-right: 12px;
+  margin-left: 12px;
+  font-size: 15px;
+  letter-spacing: 3px;
+  font-weight: 900;
+}
+main#icrate-wrapper-main #icrate-wrapper-login section.icrate-login-banner-dynamic header.icrate-login-banner-text .icrate-auth-result {
+  display: none;
+}
+main#icrate-wrapper-main #icrate-wrapper-login form {
   display: flex;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 2em;
-  margin-bottom: calc(2em + 25px);
-  height: calc(100% - 4em - 25px);
+  margin: auto;
+  flex-direction: column;
+}
+main#icrate-wrapper-main #icrate-wrapper-login form input {
+  margin: 9px auto auto auto;
+}
+main#icrate-wrapper-main #icrate-wrapper-login form button {
+  margin-top: 9px;
+  border: none;
+  background: url("/img/icrate-button-01.png") no-repeat;
+  background-size: contain;
+  width: 248.3333333333px;
+  max-width: 248.3333333333px;
+  min-width: 248.3333333333px;
+  height: 74.6666666667px;
+  max-height: 74.6666666667px;
+  min-height: 74.6666666667px;
 }
 main#icrate-wrapper-main #icrate-wrapper-app[class*=-customer] *[class*=-iz],
 main#icrate-wrapper-main #icrate-wrapper-app[class*=-customer] *[id$=-iz] {
@@ -120,9 +271,10 @@ footer#icrate-wrapper-footer {
   position: fixed;
   bottom: 0px;
   min-height: 25px;
-  left: 6px;
-  right: 6px;
-  border-top: 0.5px solid black;
+  left: 0;
+  right: 0;
+  border-top: 2px solid #f3d98f;
+  background-color: #040404;
 }
 footer#icrate-wrapper-footer p {
   display: flex;
@@ -137,19 +289,33 @@ footer#icrate-wrapper-footer p {
 footer#icrate-wrapper-footer p i,
 footer#icrate-wrapper-footer p b {
   display: flex;
-  margin: auto 6px;
+  margin: auto 12px;
   font-size: 13.5px;
+  border-right: 0.5px solid white;
+  padding-right: 12px;
+  margin-right: 12px;
+  font-weight: bolder;
+  letter-spacing: 1px;
+}
+footer#icrate-wrapper-footer p b.icrate-footer-name {
+  font-size: 15px;
+  letter-spacing: 3px;
+  font-weight: 900;
+}
+footer#icrate-wrapper-footer p b:not(.icrate-footer-name) {
+  border-left: 0.5px solid white;
+  padding-left: 12px;
+  margin-left: 12px;
 }
 footer#icrate-wrapper-footer p a {
-  margin-left: 6px;
+  margin-left: 12px;
 }
 footer#icrate-wrapper-footer p::before {
   display: flex;
   width: 28px;
   height: 28px;
-  margin-top: -6px;
-  margin-right: 6px;
-  background-image: url("/img/icrate-iz-logo-anthrazit.png");
+  margin-top: -3px;
+  background-image: url("/img/icrate-iz-logo-silver.png");
   background-repeat: no-repeat;
   background-size: contain;
   content: "";

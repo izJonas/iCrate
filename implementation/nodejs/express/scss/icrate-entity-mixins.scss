@@ -43,11 +43,49 @@
     width: 100%;
     max-width: 100%;
     min-width: 100%;
-    height: 100%;
-    max-height: 100%;
-    min-height: 100%;
+    height: calc(100vh - 43px);
+    max-height: calc(100vh - 43px);
+    min-height: calc(100vh - 43px);
 
     overflow: hidden;
 
     @content;
+}
+
+@mixin ci-font-default {
+    font-family: $ci-font-family-primary;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.2em;
+    @content;
+}
+
+@mixin unify-dimension($property, $unified-value) {
+    #{$property}: $unified-value;
+    max-#{$property}: $unified-value;
+    min-#{$property}: $unified-value;
+}
+
+@mixin button-image-circle-before {
+    display: flex;
+    width: 45px;
+    height: 45px;
+    margin-left: 10px;
+    //margin-right: 25%;
+    font-weight: 900;
+    padding-left: 6px;
+    line-height: 25px;
+    font-size: 25px;
+    box-sizing: content-box;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+}
+
+@mixin button-image-circle {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
