@@ -1,0 +1,81 @@
+/*Image URLs */
+/* Corporate Identity */
+@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap");
+#icrate-wrapper-main {
+  display: flex;
+  background-image: url("/img/icrate-bg-01.jpg");
+  background-repeat: repeat;
+  font-family: "Assistant", sans-serif;
+  font-size: 12px;
+  /* Unauthenticated */
+  /* Authenticated */
+  /* Konfiguration Sitelist */
+  /* Module Overview */
+  /* Application Views */
+  /* Responsiveness */
+}
+#icrate-wrapper-main [id^=icrate-wrapper-] {
+  display: flex;
+  margin: 75px auto;
+}
+#icrate-wrapper-main #icrate-wrapper-app[class*=-customer] *[class*=-iz],
+#icrate-wrapper-main #icrate-wrapper-app[class*=-customer] *[id$=-iz] {
+  display: none;
+}
+#icrate-wrapper-main #icrate-wrapper-app[class*=-iz]::after {
+  content: "impact-z.one internal use only!";
+}
+@media (max-width: 479px) {
+  #icrate-wrapper-main {
+    /* Unauthenticated */
+    /* Authenticated */
+    /* Konfiguration Sitelist */
+    /* Module Overview */
+    /* Application Views */
+  }
+}
+@media (min-width: 480px) and (max-width: 767px) {
+  #icrate-wrapper-main {
+    /* Unauthenticated */
+    /* Authenticated */
+    /* Konfiguration Sitelist */
+    /* Module Overview */
+    /* Application Views */
+  }
+}
+@media (min-width: 480px) {
+  #icrate-wrapper-main {
+    /* Unauthenticated */
+    /* Authenticated */
+    /* Konfiguration Sitelist */
+    /* Module Overview */
+    /* Application Views */
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  #icrate-wrapper-main {
+    /* Unauthenticated */
+    /* Authenticated */
+    /* Konfiguration Sitelist */
+    /* Module Overview */
+    /* Application Views */
+  }
+}
+@media (min-width: 768px) {
+  #icrate-wrapper-main {
+    /* Unauthenticated */
+    /* Authenticated */
+    /* Konfiguration Sitelist */
+    /* Module Overview */
+    /* Application Views */
+  }
+}
+@media (min-width: 1024px) {
+  #icrate-wrapper-main {
+    /* Unauthenticated */
+    /* Authenticated */
+    /* Konfiguration Sitelist */
+    /* Module Overview */
+    /* Application Views */
+  }
+}/*# sourceMappingURL=icrate-styles.css.map */

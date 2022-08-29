@@ -26,7 +26,7 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
         console.log('Connected to Database')
         db = client.db('icrate')
         usersCollection = db.collection('users')
-        AfterMongoConnect(usersCollection);
+        AfterMongoConnect(usersCollection)
     })
     .catch(error => console.error(error))
 
@@ -44,13 +44,13 @@ const AfterMongoConnect = function (collectionToUse) {
         const cursor = db.collection('users').find().toArray()
             .then(results => {
                 console.log(results)
-                res.render('index', { title: 'iCrate by impcat-zone', message: 'iCrate - Login required', userlist: results });
+                res.render('index', { title: 'iCrate by impcat-zone', message: 'iCrate - Login required', userlist: results })
             })
             .catch(error => console.error(error))
 
     })
 
-    app.post('/quotes', (req, res) => {
+    app.post('/login', (req, res) => {
         collectionToUse.insertOne(req.body)
             .then(result => {
                 console.log(result)

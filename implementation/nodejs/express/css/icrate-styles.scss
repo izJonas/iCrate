@@ -1,0 +1,93 @@
+@import "scss/icrate-variables";
+@import "scss/icrate-media-mixins";
+@import "scss/icrate-element-mixins";
+@import "scss/icrate-element-mixins";
+@import "scss/icrate-entity-mixins";
+@import "scss/icrate-perk-mixins";
+
+// iCrate - Root Wrapper
+#icrate-wrapper-main {
+    display: flex;
+    background-image: $icrate-background-01;
+    background-repeat: repeat;
+
+    font-family: $ci-font-family-primary;
+    font-size: $ci-font-size-medium;
+
+    // Belonging to all Wrapper globally
+    [id^="icrate-wrapper-"] {
+        display: flex;
+        margin: 75px auto;
+    }
+
+    /* Unauthenticated */
+    // Login
+    #icrate-wrapper-login {
+    }
+
+    /* Authenticated */
+
+    /* Konfiguration Sitelist */
+    // My Profile
+    #icrate-wrapper-conf-profile {
+    }
+
+    /* Module Overview */
+    // List of Applications
+    #icrate-wrapper-modview {
+        // The Applist shown as Cards
+        &.cards {
+        }
+
+        // The Applist as List-Of-Lines (Single Lines)
+        &.lines {
+        }
+
+        // The Applist shown like Ghost-Buttons
+        &.ghosts {
+        }
+
+        // Surprise (procedural creation) Mode is active
+        &.surprise-me {
+        }
+    }
+
+    /* Application Views */
+    // App Styling - General Purpose
+    #icrate-wrapper-app {
+        // For Customer - General use
+        &[class*="-customer"] {
+            // For security reasons every -iz internal element wont be shown hard coded
+            *[class*="-iz"],
+            *[id$="-iz"] {
+                // Remove from layout
+                display: none;
+            }
+        }
+
+        // For impact-z.one internal use only - General use
+        &[class*="-iz"] {
+            &::after {
+                content: "impact-z.one internal use only!";
+            }
+        }
+
+        // Für Kunden: Liste aller PDFs als download
+        &.purchase-order-projector-customer {
+        }
+
+        // Rechnungsdarstellung für den Kunden (Vorerst: Rechnung als PDF upload)
+        &.purchase-order-creator-upload-iz {
+        }
+
+        // Angebotserstellung: Einfügen von bestimmten Platzhalterfeldern (z.B. Datum) an einer oder mehreren Stellen einer Word-Vorlage.
+        &.purchase-order-creator-iz {
+        }
+    }
+
+    /* Responsiveness */
+    @import "scss/icrate-responsive-tiny";
+    @import "scss/icrate-responsive-small";
+    @import "scss/icrate-responsive-medium";
+    @import "scss/icrate-responsive-large";
+}

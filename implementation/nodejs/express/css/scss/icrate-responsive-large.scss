@@ -1,0 +1,61 @@
+// Wird nur auf großen displays angezeigt
+@include large {
+    // Belonging to all Wrapper globally
+    [id^="icrate-wrapper-"] {
+    }
+
+    /* Unauthenticated */
+    // Login
+    #icrate-wrapper-login {
+    }
+
+    /* Authenticated */
+
+    /* Konfiguration Sitelist */
+    // My Profile
+    #icrate-wrapper-conf-profile {
+    }
+
+    /* Module Overview */
+    // List of Applications
+    #icrate-wrapper-modview {
+        // The Applist shown as Cards
+        &.cards {
+        }
+
+        // The Applist as List-Of-Lines (Single Lines)
+        &.lines {
+        }
+
+        // The Applist shown like Ghost-Buttons
+        &.ghosts {
+        }
+
+        // Surprise (procedural creation) Mode is active
+        &.surprise-me {
+        }
+    }
+
+    /* Application Views */
+    // App Styling - General Purpose
+    #icrate-wrapper-app {
+        // For Customer - General use
+        &[class*="-customer"] {
+            // For impact-z.one internal use only - General use
+            &[class*="-iz"] {
+            }
+
+            // Für Kunden: Liste aller PDFs als download
+            &.purchase-order-projector-customer {
+            }
+
+            // Rechnungsdarstellung für den Kunden (Vorerst: Rechnung als PDF upload)
+            &.purchase-order-creator-upload-iz {
+            }
+
+            // Angebotserstellung: Einfügen von bestimmten Platzhalterfeldern (z.B. Datum) an einer oder mehreren Stellen einer Word-Vorlage.
+            &.purchase-order-creator-iz {
+            }
+        }
+    }
+}
