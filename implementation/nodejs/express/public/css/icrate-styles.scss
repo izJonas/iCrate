@@ -21,7 +21,7 @@ main#icrate-wrapper-main {
     font-family: $ci-font-family-primary;
     font-size: $ci-font-size-medium;
 
-    @import "scss/icrate-elements";
+    @import "../../scss/icrate-elements";
 
     // Belonging to all Wrapper globally
     [id^="icrate-wrapper-"] {
