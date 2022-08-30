@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 511.998 511.998" style="enable-background:new 0 0 511.998 511.998;" xml:space="preserve"><defs><style>.icrate-cursor-pointer-pri{fill: #d3aa61ff;}.icrate-cursor-pointer-pri-shadow{fill: #dfbe7aff;}.icrate-cursor-pointer-sec{fill: #f3d98fff;}.icrate-cursor-pointer-sec-shadow{fill: #dab678ff;}</style></defs>
-<polygon class="icrate-cursor-pointer-sec" points="62.679,465.153 76.482,15.04 415.794,311.112 208.484,317.637 "/>
-<path class="icrate-cursor-pointer-pri" d="M449.316,224.116h-4.086V200.47c0-16.919-7.516-32.818-20.106-42.533l-55.481-42.807
+<svg version="1.1" id="icrate-cursor-hourglass" xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 511.998 511.998"
+	style="enable-background:new 0 0 511.998 511.998;" xml:space="preserve">
+	<defs>
+		<style>
+			.icrate-cursor-hourglass-outline {
+				fill: #d3aa61ff;
+			}
+
+			.icrate-cursor-hourglass-inner {
+				fill: #f3d98fff;
+			}
+		</style>
+	</defs>
+	<g id="icrate-cursor-hourglass-group">
+		<polygon class="icrate-cursor-hourglass-inner"
+			points="62.679,465.153 76.482,15.04 415.794,311.112 208.484,317.637 " />
+		<path class="icrate-cursor-hourglass-outline" d="M449.316,224.116h-4.086V200.47c0-16.919-7.516-32.818-20.106-42.533l-55.481-42.807
 	c-0.435-0.335-0.886-0.633-1.346-0.914l-54.135-41.768c-5.181-3.999-8.401-11.172-8.401-18.719V30.08h109.39v23.646
 	c0,7.547-3.22,14.72-8.401,18.719c-6.577,5.075-7.794,14.518-2.719,21.095c5.073,6.577,14.52,7.795,21.095,2.719
 	c12.59-9.714,20.106-25.615,20.106-42.533V30.08h4.086c8.307,0,15.04-6.733,15.04-15.04S457.622,0,449.316,0h-19.127h-139.47
@@ -18,35 +32,6 @@
 	l-55.766-127.83c-3.321-7.613-12.182-11.095-19.8-7.771c-7.613,3.321-11.092,12.187-7.771,19.8l55.764,127.83L78.885,427.362
 	L90.541,47.27l229.377,200.146c1.495,2.27,3.592,4.1,6.06,5.287l51.093,44.582L218.197,302.284z M306.242,195.559
 	c1.06-5.645,3.882-10.694,7.919-13.808l46.293-35.719l46.293,35.719c5.183,3.999,8.401,11.172,8.401,18.719v23.648h-76.181
-	L306.242,195.559z"/>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
+	L306.242,195.559z" />
+	</g>
 </svg>
