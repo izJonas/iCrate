@@ -46,16 +46,18 @@ icrate-cursor-plus
 icrate-cursor-minus
 icrate-cursor-zoom-in
 icrate-cursor-zoom-out
-icrate-pointer-hold-horizontal
-icrate-pointer-hold-vertical
 
 icrate-pointer-finger
 icrate-pointer-click
 icrate-pointer-open-hand
 icrate-hourglass-full
+
 icrate-pointer-plus
 icrate-pointer-minus
+icrate-pointer-hold-horizontal
+icrate-pointer-hold-vertical
 icrate-pointer-swipe-right
+icrate-pointer-swipe-left
 </pre>
 
 ## *Cursor SVG Entities*
