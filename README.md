@@ -1,35 +1,43 @@
 # Cursor + Pointer
 ## *SVG Names*
 <pre>
-cursor-auth-expand-horizontal.svg
-cursor-auth-hourglass.svg
-cursor-auth-zoom-in.svg
+cursor-initial-white.svg
+
 hourglass-auth-full.svg
-pointer-auth-swipe-right.svg
-cursor-auth-expand-vertical.svg
-cursor-auth-zoom-out.svg
-pointer-auth-open-hand.svg
-pointer-auth-finger.svg
-cursor-auth-resize-horizontal.svg
-pointer-auth-hold-horizontal.svg
-pointer-auth-hold-vertical.svg
-cursor-auth-light.svg
-cursor-auth-resize-vertical.svg
-pointer-auth-click.svg
-pointer-auth-plus.svg
-pointer-auth-minus.svg
-cursor-auth-minus.svg
+
 cursor-auth-default.svg
 cursor-auth-text.svg
-cursor-auth-sonar.svg
 cursor-auth-click-.svg
+cursor-auth-sonar.svg
+cursor-auth-hourglass.svg
+cursor-auth-light.svg
+
+cursor-auth-expand-horizontal.svg
+cursor-auth-expand-vertical.svg
+cursor-auth-resize-horizontal.svg
+cursor-auth-resize-vertical.svg
 cursor-auth-plus.svg
-cursor-initial-white.svg
+cursor-auth-minus.svg
+cursor-auth-zoom-in.svg
+cursor-auth-zoom-out.svg
+
+pointer-auth-finger.svg
+pointer-auth-click.svg
+pointer-auth-open-hand.svg
+
+pointer-auth-plus.svg
+pointer-auth-minus.svg
+pointer-auth-hold-horizontal.svg
+pointer-auth-hold-vertical.svg
+pointer-auth-swipe-right.svg
+pointer-auth-swipe-left.svg
 </pre>
 
 ## *Cursor Layer Id's*
 <pre>
 icrate-cursor-initial-white
+
+icrate-hourglass-full
 
 icrate-cursor-default
 icrate-cursor-text
@@ -50,7 +58,6 @@ icrate-cursor-zoom-out
 icrate-pointer-finger
 icrate-pointer-click
 icrate-pointer-open-hand
-icrate-hourglass-full
 
 icrate-pointer-plus
 icrate-pointer-minus

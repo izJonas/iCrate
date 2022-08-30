@@ -1,7 +1,7 @@
-@import "../../scss/icrate-variables";
-@import "../../scss/icrate-media-mixins";
-@import "../../scss/icrate-entity-mixins";
-@import "../../scss/icrate-perk-mixins";
+@import "scss/icrate-variables";
+@import "scss/icrate-media-mixins";
+@import "scss/icrate-entity-mixins";
+@import "scss/icrate-perk-mixins";
 
 body {
     margin: 0;
@@ -64,7 +64,7 @@ body {
 
 // iCrate - Root Wrapper
 main#icrate-wrapper-main {
-    @import "../../scss/icrate-elements";
+    @import "scss/icrate-elements";
 
     display: flex;
     background-image: $icrate-background-01;
@@ -222,10 +222,10 @@ main#icrate-wrapper-main {
     }
 
     /* Responsiveness */
-    @import "../../scss/icrate-responsive-tiny";
-    @import "../../scss/icrate-responsive-small";
-    @import "../../scss/icrate-responsive-medium";
-    @import "../../scss/icrate-responsive-large";
+    @import "scss/icrate-responsive-tiny";
+    @import "scss/icrate-responsive-small";
+    @import "scss/icrate-responsive-medium";
+    @import "scss/icrate-responsive-large";
 }
 
 /* Footer Section */
