@@ -22,6 +22,21 @@ body {
         }
     }
 
+    input[type="text"],
+    input[type="password"] {
+        color: #d3aa61ff;
+        outline-color: #040404;
+        text-decoration-color: #040404;
+        text-shadow: 1px 1px 1.5px #040404;
+
+        &::placeholder {
+            color:
+            outline-color: #d3aa61ff;
+            text-decoration-color: #d3aa61ff;
+            text-shadow: 1px 1px 1.5px #f3d98fff;
+        }
+    }
+
     *[id^="input-mandatory-description-"] {
         margin-bottom: -20px;
         margin-left: 120px;
@@ -36,7 +51,7 @@ body {
         transition: letter-spacing 1s ease-in 0.1s;
         letter-spacing: $atomic-space-factor;
 
-        &.hovering-input {
+        &.hovering-input:not(.entered-input) {
             transition: color 1s ease-out 0.1s;
             color: rgba(231, 78, 78);
 
@@ -47,7 +62,7 @@ body {
             letter-spacing: (2 * $atomic-space-factor);
         }
 
-        &.focusing-input {
+        &.focusing-input:not(.entered-input) {
             transition: color 1s ease-out 0.1s;
             color: #29ac30;
 
@@ -55,8 +70,10 @@ body {
             opacity: 1;
 
             transition: letter-spacing 1s ease-out 0.1s;
-            letter-spacing: $atomic-space-factor;
+            letter-spacing: 1px;
         }
+
+        &.entered
     }
 
     /* General Styles applied to all buttons on any subpage  */
@@ -316,7 +333,7 @@ main#icrate-wrapper-main {
 
                     &:focus {
                         transition: $login-button-transition-in;
-                        filter: drop-shadow(3px 3px 2px #29ac30);
+                        filter: drop-shadow(3px 3px 2px #3bff44);
 
                         &::placeholder {
                             transition: $login-button-transition-in;
