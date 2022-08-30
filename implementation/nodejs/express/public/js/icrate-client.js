@@ -1,1 +1,3 @@
-import client from './json/icrate-client.json' assert { type}
+import client from './json/icrate-client.json'  assert { type: "json" };
+
+window.iCrate = client;

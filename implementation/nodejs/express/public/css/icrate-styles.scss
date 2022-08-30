@@ -22,6 +22,43 @@ body {
         }
     }
 
+    *[id^="input-mandatory-description-"] {
+        margin-bottom: -20px;
+        margin-left: 120px;
+        margin-top: 25px;
+
+        transition: color 1s ease-in 0.1s;
+        color: rgb(36, 9, 9);
+
+        transition: opacity 1s ease-in 0.1s;
+        opacity: 0;
+
+        transition: letter-spacing 1s ease-in 0.1s;
+        letter-spacing: $atomic-space-factor;
+
+        &.hovering-input {
+            transition: color 1s ease-out 0.1s;
+            color: rgba(231, 78, 78);
+
+            transition: opacity 1s ease-out 0.1s;
+            opacity: 1;
+
+            transition: letter-spacing 1s ease-out 0.1s;
+            letter-spacing: (2 * $atomic-space-factor);
+        }
+
+        &.focusing-input {
+            transition: color 1s ease-out 0.1s;
+            color: #29ac30;
+
+            transition: opacity 1.5s ease-out 0.3s;
+            opacity: 1;
+
+            transition: letter-spacing 1s ease-out 0.1s;
+            letter-spacing: $atomic-space-factor;
+        }
+    }
+
     /* General Styles applied to all buttons on any subpage  */
     button {
         transition: $login-button-transition-out;
@@ -244,20 +281,50 @@ main#icrate-wrapper-main {
             flex-direction: column;
 
             input {
+                transition: $login-button-transition-out;
+
                 margin: calc(7 * $atomic-space-factor) auto auto auto;
+
+                filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0));
+
                 font-size: 18px;
 
                 &.icrate-input-mandatory {
-
                     &::placeholder {
+                        transition: $login-button-transition-out;
+
                         color: #040404;
+
+                        letter-spacing: $atomic-space-factor;
+
+                        text-decoration: none;
                     }
 
                     &:hover {
-                        content:attr(placeholder) "Required!";
+                        transition: $login-button-transition-in;
+                        filter: drop-shadow(2px 2px 3px rgb(231, 78, 78));
 
                         &::placeholder {
-                                color: rgb(231, 78, 78);
+                            transition: $login-button-transition-in;
+
+                            color: rgb(231, 78, 78);
+                            letter-spacing: calc(3 * $atomic-space-factor);
+
+                            text-decoration: line-through;
+                        }
+                    }
+
+                    &:focus {
+                        transition: $login-button-transition-in;
+                        filter: drop-shadow(3px 3px 2px #29ac30);
+
+                        &::placeholder {
+                            transition: $login-button-transition-in;
+
+                            color: rgb(231, 78, 78, 0);
+                            letter-spacing: calc(3 * $atomic-space-factor);
+
+                            text-decoration: none;
                         }
                     }
                 }

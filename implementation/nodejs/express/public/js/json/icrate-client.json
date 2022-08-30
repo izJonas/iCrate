@@ -1,0 +1,11 @@
+{
+    "client": {
+        "sites": {
+            "login": {},
+            "module-overview": {}
+        },
+        "events": {
+            "running": {}
+        }
+    }
+}

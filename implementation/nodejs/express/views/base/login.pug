@@ -11,21 +11,29 @@ block icrate-content
             action="/login"
             method="POST"
         )
+            #input-mandatory-description-name Required!
             input(
                 type="text"
                 placeholder="Name"
                 name="name"
                 id="name"
-                onmouseenter="window.icrateFunctions.BeginRequirementVisualization(this)"
+                onmouseenter="setMouseEnterTransitionClass(this)"
+                onmouseleave="processMouseLeaveTransitionClass(this)"
+                onfocus="signalizeCorrectness(this)"
+                onfocusout="revertCorrectness(this)"
                 class="icrate-input-text icrate-input-mandatory"
                 required
             )
+            #input-mandatory-description-password Required!
             input(
                 type="password"
                 placeholder="Password"
                 name="password"
                 id="password"
-                onmouseenter="window.icrateFunctions.BeginRequirementVisualization(this)"
+                onmouseenter="setMouseEnterTransitionClass(this)"
+                onmouseleave="processMouseLeaveTransitionClass(this)"
+                onfocus="signalizeCorrectness(this)"
+                onfocusout="revertCorrectness(this)"
                 class="icrate-input-password icrate-input-mandatory"
                 required
             )

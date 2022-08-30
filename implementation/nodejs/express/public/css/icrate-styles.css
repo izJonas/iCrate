@@ -30,6 +30,33 @@ body * {
   -webkit-text-decoration-color: white;
           text-decoration-color: white;
 }
+body *[id^=input-mandatory-description-] {
+  margin-bottom: -20px;
+  margin-left: 120px;
+  margin-top: 25px;
+  transition: color 1s ease-in 0.1s;
+  color: rgb(36, 9, 9);
+  transition: opacity 1s ease-in 0.1s;
+  opacity: 0;
+  transition: letter-spacing 1s ease-in 0.1s;
+  letter-spacing: 3px;
+}
+body *[id^=input-mandatory-description-].hovering-input {
+  transition: color 1s ease-out 0.1s;
+  color: rgb(231, 78, 78);
+  transition: opacity 1s ease-out 0.1s;
+  opacity: 1;
+  transition: letter-spacing 1s ease-out 0.1s;
+  letter-spacing: 6px;
+}
+body *[id^=input-mandatory-description-].focusing-input {
+  transition: color 1s ease-out 0.1s;
+  color: #29ac30;
+  transition: opacity 1.5s ease-out 0.3s;
+  opacity: 1;
+  transition: letter-spacing 1s ease-out 0.1s;
+  letter-spacing: 3px;
+}
 body button {
   transition: all 1s ease-in 0.1s;
   display: flex;
@@ -289,29 +316,78 @@ main#icrate-wrapper-main #icrate-wrapper-login form {
   flex-direction: column;
 }
 main#icrate-wrapper-main #icrate-wrapper-login form input {
+  transition: all 1s ease-in 0.1s;
   margin: 21px auto auto auto;
+  filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0));
   font-size: 18px;
 }
 main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory::-moz-placeholder {
+  -moz-transition: all 1s ease-in 0.1s;
+  transition: all 1s ease-in 0.1s;
   color: #040404;
+  letter-spacing: 3px;
+  text-decoration: none;
 }
 main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory:-ms-input-placeholder {
+  -ms-transition: all 1s ease-in 0.1s;
+  transition: all 1s ease-in 0.1s;
   color: #040404;
+  letter-spacing: 3px;
+  text-decoration: none;
 }
 main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory::placeholder {
+  transition: all 1s ease-in 0.1s;
   color: #040404;
+  letter-spacing: 3px;
+  text-decoration: none;
 }
 main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory:hover {
-  content: attr(placeholder) "Required!";
+  transition: all 1s ease-out 0s;
+  filter: drop-shadow(2px 2px 3px rgb(231, 78, 78));
 }
 main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory:hover::-moz-placeholder {
+  -moz-transition: all 1s ease-out 0s;
+  transition: all 1s ease-out 0s;
   color: rgb(231, 78, 78);
+  letter-spacing: 9px;
+  text-decoration: line-through;
 }
 main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory:hover:-ms-input-placeholder {
+  -ms-transition: all 1s ease-out 0s;
+  transition: all 1s ease-out 0s;
   color: rgb(231, 78, 78);
+  letter-spacing: 9px;
+  text-decoration: line-through;
 }
 main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory:hover::placeholder {
+  transition: all 1s ease-out 0s;
   color: rgb(231, 78, 78);
+  letter-spacing: 9px;
+  text-decoration: line-through;
+}
+main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory:focus {
+  transition: all 1s ease-out 0s;
+  filter: drop-shadow(3px 3px 2px #29ac30);
+}
+main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory:focus::-moz-placeholder {
+  -moz-transition: all 1s ease-out 0s;
+  transition: all 1s ease-out 0s;
+  color: rgba(231, 78, 78, 0);
+  letter-spacing: 9px;
+  text-decoration: none;
+}
+main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory:focus:-ms-input-placeholder {
+  -ms-transition: all 1s ease-out 0s;
+  transition: all 1s ease-out 0s;
+  color: rgba(231, 78, 78, 0);
+  letter-spacing: 9px;
+  text-decoration: none;
+}
+main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory:focus::placeholder {
+  transition: all 1s ease-out 0s;
+  color: rgba(231, 78, 78, 0);
+  letter-spacing: 9px;
+  text-decoration: none;
 }
 main#icrate-wrapper-main #icrate-wrapper-login form button {
   margin-top: 15px;
