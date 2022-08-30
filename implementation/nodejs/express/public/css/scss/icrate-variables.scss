@@ -44,3 +44,14 @@ $drop-button-shadow-to: rgba(237, 125, 49, 1);
 // Footer things
 $space-for-footer: $space-for-header;
 $border-within-footer: $border-within-header;
+
+// Cursor
+$cursor-width: 26px;
+$cursor-height: 26px;
+
+$login-button-transition-out: all 1s ease-in 0.1s; //0.1s;
+$login-button-transition-in: all 1s ease-out 0s; // 0.1s;
+
+$login-button-transition-even: all 0.85s ease 0.05s;
+//$login-button-transition-out: $login-button-transition-even;
+//$login-button-transition-in: $login-button-transition-even;

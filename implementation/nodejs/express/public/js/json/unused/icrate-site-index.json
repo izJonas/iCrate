@@ -1,0 +1,23 @@
+{
+    "login": {
+        "fields": {
+            "names": [
+                "name",
+                "password"
+            ],
+            "mandatory": [
+                "name",
+                "password"
+            ]
+        },
+        "buttons": {
+            "submit": {
+                "className": "icrate-button-submit"
+            }
+        }
+    },
+    "module-overview": {},
+    "purchase-order-creator-iz": {},
+    "purchase-order-creator-upload-iz": {},
+    "purchase-order-projector-customer": {}
+}

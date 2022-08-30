@@ -20,9 +20,13 @@
 }
 
 @mixin icrate-button-submit {
-    border: 0.5px solid black;
-    padding: 3px;
+    border: none;
+
+    margin: 0;
+    padding: 0;
+
     min-width: 125px;
+
     @content;
 }
 
@@ -68,24 +72,81 @@
 
 @mixin button-image-circle-before {
     display: flex;
-    width: 45px;
-    height: 45px;
-    margin-left: 10px;
-    //margin-right: 25%;
-    font-weight: 900;
-    padding-left: 6px;
-    line-height: 25px;
-    font-size: 25px;
+
     box-sizing: content-box;
-    justify-content: center;
+
+    font-family: $ci-font-family-secondary;
+
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-left: 31px;
+
+    width: 60px;
+    height: 60px;
+
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: 900;
+
     align-items: center;
     align-content: center;
-    justify-items: center;
+    justify-items: flex-start;
+    justify-content: flex-start;
 }
 
-@mixin button-image-circle {
-    padding: 0;
+@mixin button-image-label {
     display: flex;
+
+    font-size: 18px;
+
+    margin: auto;
+
     align-items: center;
+    align-content: center;
+    justify-items: flex-start;
     justify-content: flex-start;
+
+    @content;
+}
+
+/* Cursor Definitions */
+@mixin cursor-initial {
+    cursor: $icrate-cursor-initial-white, auto;
+}
+
+@mixin cursor-auth {
+    cursor: $icrate-cursor-default, auto;
+    cursor: $icrate-hourglass-full, auto, wait;
+    cursor: $icrate-cursor-text, auto, text;
+    cursor: $icrate-cursor-click, auto, click;
+    cursor: $icrate-cursor-sonar, auto, cell;
+    cursor: $icrate-cursor-hourglass, auto, progress;
+    cursor: $icrate-cursor-light, auto, alias;
+    cursor: $icrate-cursor-expand-horizontal, auto, col-resize;
+    cursor: $icrate-cursor-expand-vertical, auto, row-resize;
+    cursor: $icrate-cursor-resize-horizontal, auto, ew-resize;
+    cursor: $icrate-cursor-resize-vertical, auto, ns-resize;
+    cursor: $icrate-cursor-plus, auto, copy;
+    cursor: $icrate-cursor-minus, auto, not-allowed;
+    cursor: $icrate-cursor-zoom-in, auto, -webkit-zoom-in;
+    cursor: $icrate-cursor-zoom-in, auto, -moz-zoom-in;
+    cursor: $icrate-cursor-zoom-in, auto, zoom-in;
+    cursor: $icrate-cursor-zoom-out, auto, -webkit-zoom-out;
+    cursor: $icrate-cursor-zoom-out, auto, -moz-zoom-out;
+    cursor: $icrate-cursor-zoom-out, auto, zoom-out;
+    cursor: $icrate-pointer-finger, auto, pointer;
+    cursor: $icrate-pointer-open-hand, auto, move;
+}
+
+@mixin pointer-click {
+    cursor: $icrate-pointer-click, auto;
+}
+
+@mixin pointer-unused {
+    cursor: $icrate-pointer-plus, auto;
+    cursor: $icrate-pointer-minus, auto;
+    cursor: $icrate-pointer-hold-horizontal, auto;
+    cursor: $icrate-pointer-hold-vertical, auto;
+    cursor: $icrate-pointer-swipe-right, auto;
+    cursor: $icrate-pointer-swipe-left, auto;
 }

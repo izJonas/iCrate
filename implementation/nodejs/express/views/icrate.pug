@@ -14,10 +14,26 @@ html(lang='de')
         link(rel="stylesheet" href="/css/icrate-styles.css")
 
         //- JavaScript files
-        script(src="/js/icrate-variables.js")
-        script(src="/js/icrate-functions.js")
-        script(src="/js/icrate-observers.js")
+        //- script(type="module" src="/js/icrate-constants.js")
+        //- script(type="module" src="/js/icrate-variables.js")
+        //- script(type="module" src="/js/icrate-functions.js")
+        //- script(type="module" src="/js/icrate-indoctrinations.js")
+        //- script(type="module" src="/js/icrate-observers.js")
+        //- script(type="module" src="/js/icrate-run.js")
+        script(type="module" src="/js/icreate-client.js")
     body
+        #cto-indoctrination-observer
+            .cto-tactic-usage
+            .cto-aggression-bar
+            .cto-strategy-indicator
+        #hzd-indoctrination-observer
+            .hzd-barrier-health
+            .hzd-sensor-detection
+            .hzd-trapping-indicator
+        #fae-indoctrination-observer
+            .fae-attack-vector
+            .fae-aiming-interface
+            .fae-weapon-indicator
         main(id="icrate-wrapper-main")
             block icrate-content
         include footer.pug

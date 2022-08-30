@@ -7,7 +7,7 @@ hourglass-auth-full.svg
 
 cursor-auth-default.svg
 cursor-auth-text.svg
-cursor-auth-click-.svg
+cursor-auth-click.svg
 cursor-auth-sonar.svg
 cursor-auth-hourglass.svg
 cursor-auth-light.svg

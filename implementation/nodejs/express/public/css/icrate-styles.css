@@ -1,6 +1,8 @@
 /*Image URLs */
 /* Corporate Identity */
 @import url("https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap");
+/* Cursor Definitions */
+/* Body Start */
 body {
   margin: 0;
   padding: 0;
@@ -12,6 +14,13 @@ body {
   min-height: calc(100vh - 43px);
   overflow: hidden;
   box-sizing: border-box;
+  /* Style all elements here */
+  /* General Styles applied to all buttons on any subpage  */
+  /* Interactive Component, beginning to go on ther users nerves the longer he isn't doing something */
+  /* Interactive Component, fortifying a surrounding with the input elements in the middle / detection range */
+  /* Interactive Component, fortifying a surrounding with the input elements in the middle / detection range */
+}
+body * {
   font-family: "Assistant", sans-serif;
   font-size: 12px;
   font-weight: 700;
@@ -23,65 +32,113 @@ body {
 }
 body button {
   transition: all 1s ease-in 0.1s;
+  display: flex;
   color: white;
   filter: drop-shadow(0px 0px 0px rgba(255, 192, 0, 0.1));
+  /* The not hovered Button Label */
+  /* The not hovered pre content element (Resides inside of the buttons circle on the left) */
+  /* The hovered Button */
+}
+body button .icrate-button-label {
+  transition: all 1s ease-in 0.1s;
   letter-spacing: 3px;
   padding: 0;
   display: flex;
+  font-size: 18px;
+  margin: auto;
   align-items: center;
+  align-content: center;
+  justify-items: flex-start;
   justify-content: flex-start;
 }
 body button::before {
-  transition: all 1s ease-in 0.1s;
+  transition: all 1s ease-out 0s;
   opacity: 0;
-  color: #ffc000;
-  margin-right: 25%;
+  color: 0;
   display: flex;
-  width: 45px;
-  height: 45px;
-  margin-left: 10px;
-  font-weight: 900;
-  padding-left: 6px;
-  line-height: 25px;
-  font-size: 25px;
   box-sizing: content-box;
-  justify-content: center;
+  font-family: "Orbitron", sans-serif;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-left: 31px;
+  width: 60px;
+  height: 60px;
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 900;
   align-items: center;
   align-content: center;
-  justify-items: center;
-  content: "L";
+  justify-items: flex-start;
+  justify-content: flex-start;
+  content: "x";
 }
 body button:hover {
-  transition: all 1s ease-out 0.1s;
+  transition: all 1s ease-out 0s;
   color: #ffc000;
   filter: drop-shadow(5px 5px 5px rgb(237, 125, 49));
-  letter-spacing: 9px;
-  padding: 0;
+  /* The hovered Button Label */
+  /* The hovered pre content element (Resides inside of the buttons circle on the left) */
+}
+body button:hover .icrate-button-label {
+  transition: all 1s ease-out 0s;
+  letter-spacing: 12px;
+  padding: 0 31px 0 0;
   display: flex;
+  font-size: 18px;
+  margin: auto;
   align-items: center;
+  align-content: center;
+  justify-items: flex-start;
   justify-content: flex-start;
 }
 body button:hover::before {
-  transition: all 1s ease-out 0.1s;
+  transition: all 1s ease-in 0.1s;
   opacity: 1;
-  color: white;
-  margin-right: 15%;
+  color: #ffc000;
   display: flex;
-  width: 45px;
-  height: 45px;
-  margin-left: 10px;
-  font-weight: 900;
-  padding-left: 6px;
-  line-height: 25px;
-  font-size: 25px;
   box-sizing: content-box;
-  justify-content: center;
+  font-family: "Orbitron", sans-serif;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-left: 31px;
+  width: 60px;
+  height: 60px;
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 900;
   align-items: center;
   align-content: center;
-  justify-items: center;
-  content: "L";
+  justify-items: flex-start;
+  justify-content: flex-start;
+  content: "#";
 }
-
+body #cto-indoctrination-observer {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+}
+body #cto-indoctrination-observer > *[class^=cto-] {
+  display: flex;
+}
+body #hzd-indoctrination-observer {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+}
+body #hzd-indoctrination-observer > *[class^=hzd-] {
+  display: flex;
+}
+body #fae-indoctrination-observer {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+}
+body #fae-indoctrination-observer > *[class^=fae-] {
+  display: flex;
+}
 main#icrate-wrapper-main {
   display: flex;
   background-image: url("/img/icrate-bg-01.jpg");
@@ -104,8 +161,9 @@ main#icrate-wrapper-main .icreate-input-password {
   min-width: 125px;
 }
 main#icrate-wrapper-main .icrate-button-submit {
-  border: 0.5px solid black;
-  padding: 3px;
+  border: none;
+  margin: 0;
+  padding: 0;
   min-width: 125px;
 }
 main#icrate-wrapper-main input[type=text],
@@ -115,26 +173,68 @@ main#icrate-wrapper-main select {
   padding: 3px;
 }
 main#icrate-wrapper-main input[type=text]::-moz-placeholder, main#icrate-wrapper-main input[type=textarea]::-moz-placeholder, main#icrate-wrapper-main input[type=password]::-moz-placeholder, main#icrate-wrapper-main select::-moz-placeholder {
+  -moz-transition: all 1s ease-in 0.1s;
+  transition: all 1s ease-in 0.1s;
   letter-spacing: 3px;
 }
 main#icrate-wrapper-main input[type=text]:-ms-input-placeholder, main#icrate-wrapper-main input[type=textarea]:-ms-input-placeholder, main#icrate-wrapper-main input[type=password]:-ms-input-placeholder, main#icrate-wrapper-main select:-ms-input-placeholder {
+  -ms-transition: all 1s ease-in 0.1s;
+  transition: all 1s ease-in 0.1s;
   letter-spacing: 3px;
 }
 main#icrate-wrapper-main input[type=text]::placeholder,
 main#icrate-wrapper-main input[type=textarea]::placeholder,
 main#icrate-wrapper-main input[type=password]::placeholder,
 main#icrate-wrapper-main select::placeholder {
+  transition: all 1s ease-in 0.1s;
   letter-spacing: 3px;
+}
+main#icrate-wrapper-main input[type=text]::-moz-placeholder:hover, main#icrate-wrapper-main input[type=textarea]::-moz-placeholder:hover, main#icrate-wrapper-main input[type=password]::-moz-placeholder:hover, main#icrate-wrapper-main select::-moz-placeholder:hover {
+  -moz-transition: all 1s ease-out 0s;
+  transition: all 1s ease-out 0s;
+  letter-spacing: 9px;
+}
+main#icrate-wrapper-main input[type=text]:-ms-input-placeholder:hover, main#icrate-wrapper-main input[type=textarea]:-ms-input-placeholder:hover, main#icrate-wrapper-main input[type=password]:-ms-input-placeholder:hover, main#icrate-wrapper-main select:-ms-input-placeholder:hover {
+  -ms-transition: all 1s ease-out 0s;
+  transition: all 1s ease-out 0s;
+  letter-spacing: 9px;
+}
+main#icrate-wrapper-main input[type=text]::placeholder:hover,
+main#icrate-wrapper-main input[type=textarea]::placeholder:hover,
+main#icrate-wrapper-main input[type=password]::placeholder:hover,
+main#icrate-wrapper-main select::placeholder:hover {
+  transition: all 1s ease-out 0s;
+  letter-spacing: 9px;
 }
 main#icrate-wrapper-main [id^=icrate-wrapper-] {
   display: flex;
   margin: 0 auto;
+}
+main#icrate-wrapper-main [id^=icrate-wrapper-]:not([id=icrate-wrapper-login]) {
+  cursor: url("/img/svg/mouse/cursor-auth-default.svg"), auto;
+  cursor: url("/img/svg/mouse/hourglass-auth-full.svg"), auto, wait;
+  cursor: url("/img/svg/mouse/cursor-auth-text.svg"), auto, text;
+  cursor: url("/img/svg/mouse/cursor-auth-click.svg"), auto, click;
+  cursor: url("/img/svg/mouse/cursor-auth-sonar.svg"), auto, cell;
+  cursor: url("/img/svg/mouse/cursor-auth-hourglass.svg"), auto, progress;
+  cursor: url("/img/svg/mouse/cursor-auth-light.svg"), auto, alias;
+  cursor: url("/img/svg/mouse/cursor-auth-expand-horizontal.svg"), auto, col-resize;
+  cursor: url("/img/svg/mouse/cursor-auth-expand-vertical.svg"), auto, row-resize;
+  cursor: url("/img/svg/mouse/cursor-auth-resize-horizontal.svg"), auto, ew-resize;
+  cursor: url("/img/svg/mouse/cursor-auth-resize-vertical.svg"), auto, ns-resize;
+  cursor: url("/img/svg/mouse/cursor-auth-plus.svg"), auto, copy;
+  cursor: url("/img/svg/mouse/cursor-auth-minus.svg"), auto, not-allowed;
+  cursor: url("/img/svg/mouse/cursor-auth-zoom-in.svg"), auto, zoom-in;
+  cursor: url("/img/svg/mouse/cursor-auth-zoom-out.svg"), auto, zoom-out;
+  cursor: url("/img/svg/mouse/pointer-auth-finger.svg"), auto, pointer;
+  cursor: url("/img/svg/mouse/pointer-auth-open-hand.svg"), auto, move;
 }
 main#icrate-wrapper-main #icrate-wrapper-login {
   margin: 0;
   flex-direction: column;
   width: 100%;
   height: calc(100% - 4em - 25px);
+  cursor: url("/img/svg/mouse/cursor-initial-white.svg"), auto;
 }
 main#icrate-wrapper-main #icrate-wrapper-login section.icrate-login-banner-dynamic {
   display: flex;
@@ -189,13 +289,35 @@ main#icrate-wrapper-main #icrate-wrapper-login form {
   flex-direction: column;
 }
 main#icrate-wrapper-main #icrate-wrapper-login form input {
-  margin: 9px auto auto auto;
+  margin: 21px auto auto auto;
+  font-size: 18px;
+}
+main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory::-moz-placeholder {
+  color: #040404;
+}
+main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory:-ms-input-placeholder {
+  color: #040404;
+}
+main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory::placeholder {
+  color: #040404;
+}
+main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory:hover {
+  content: attr(placeholder) "Required!";
+}
+main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory:hover::-moz-placeholder {
+  color: rgb(231, 78, 78);
+}
+main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory:hover:-ms-input-placeholder {
+  color: rgb(231, 78, 78);
+}
+main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory:hover::placeholder {
+  color: rgb(231, 78, 78);
 }
 main#icrate-wrapper-main #icrate-wrapper-login form button {
-  margin-top: 9px;
-  border: none;
+  margin-top: 15px;
   background: url("/img/icrate-button-01.png") no-repeat;
   background-size: contain;
+  padding-right: 15px;
   width: 248.3333333333px;
   max-width: 248.3333333333px;
   min-width: 248.3333333333px;

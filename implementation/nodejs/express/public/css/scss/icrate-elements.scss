@@ -16,6 +16,14 @@ select {
     padding: 3px;
 
     &::placeholder {
+        transition: $login-button-transition-out;
+
         letter-spacing: $atomic-space-factor;
+
+        &:hover {
+            transition: $login-button-transition-in;
+
+            letter-spacing: calc(3 * $atomic-space-factor);
+        }
     }
 }

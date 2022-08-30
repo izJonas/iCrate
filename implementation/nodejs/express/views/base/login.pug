@@ -15,17 +15,25 @@ block icrate-content
                 type="text"
                 placeholder="Name"
                 name="name"
-                class="icrate-input-text"
+                id="name"
+                onmouseenter="window.icrateFunctions.BeginRequirementVisualization(this)"
+                class="icrate-input-text icrate-input-mandatory"
+                required
             )
             input(
                 type="password"
                 placeholder="Password"
                 name="password"
-                class="icrate-input-password"
+                id="password"
+                onmouseenter="window.icrateFunctions.BeginRequirementVisualization(this)"
+                class="icrate-input-password icrate-input-mandatory"
+                required
             )
             button(
                 type="submit"
-            ) Login
+                class="icrate-button-submit"
+            )
+                .icrate-button-label Login
 
         //-#quotes-wrapper
             ul
