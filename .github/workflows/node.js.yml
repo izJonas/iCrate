@@ -26,6 +26,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        cache-dependency-path: implementation/nodejs/express
     - run: npm install
       working-directory: implementation/nodejs/express
     - run: npm run build --if-present
