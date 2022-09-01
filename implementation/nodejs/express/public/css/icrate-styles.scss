@@ -16,21 +16,21 @@ body {
     /* Style all elements here */
     * {
         @include ci-font-default {
-            color: white;
-            outline-color: white;
-            text-decoration-color: white;
+            color: $color-indicator-light-white;
+            outline-color: $color-indicator-light-white;
+            text-decoration-color: $color-indicator-light-white;
         }
     }
 
     input[type="text"],
     input[type="password"] {
-        color: #d3aa61ff;
-        outline-color: #040404;
-        text-decoration-color: #040404;
-        text-shadow: 1px 1px 1.5px #040404;
+        color: $color-indicator-dark-blue;
+        outline-color: $color-indicator-light-yellow;
+        text-decoration-color: $color-indicator-light-yellow;
+        text-shadow: 1px 1px 1.5px $color-indicator-dark-yellow;
 
         &::placeholder {
-            color:
+            color: $color-indicator-dark-orange;
             outline-color: #d3aa61ff;
             text-decoration-color: #d3aa61ff;
             text-shadow: 1px 1px 1.5px #f3d98fff;
@@ -42,38 +42,51 @@ body {
         margin-left: 120px;
         margin-top: 25px;
 
-        transition: color 1s ease-in 0.1s;
-        color: rgb(36, 9, 9);
+        caret-color: transparent;
+        -webkit-user-select: none; /* Safari */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+        user-select: none; /* Standard */
 
-        transition: opacity 1s ease-in 0.1s;
+        transition: $login-button-transition-in;
+
+        color: $color-indicator-dark-red;
+
         opacity: 0;
 
-        transition: letter-spacing 1s ease-in 0.1s;
         letter-spacing: $atomic-space-factor;
 
-        &.hovering-input:not(.entered-input) {
-            transition: color 1s ease-out 0.1s;
-            color: rgba(231, 78, 78);
+        b {
+            color: $color-indicator-light-green;
+        }
 
-            transition: opacity 1s ease-out 0.1s;
+        &.hovering-input:not(.entered-input) {
+            transition: $login-button-transition-in;
+
+            color: $color-indicator-light-red;
+
             opacity: 1;
 
-            transition: letter-spacing 1s ease-out 0.1s;
             letter-spacing: (2 * $atomic-space-factor);
         }
 
         &.focusing-input:not(.entered-input) {
-            transition: color 1s ease-out 0.1s;
-            color: #29ac30;
+            transition: $login-button-transition-in;
+            color: $color-indicator-light-blue;
 
-            transition: opacity 1.5s ease-out 0.3s;
             opacity: 1;
 
-            transition: letter-spacing 1s ease-out 0.1s;
             letter-spacing: 1px;
         }
 
-        &.entered
+        &.entered-input {
+            transition: $login-button-transition-in;
+            color: $color-indicator-light-green;
+
+            opacity: 1;
+
+            letter-spacing: $atomic-space-factor;
+        }
     }
 
     /* General Styles applied to all buttons on any subpage  */
@@ -82,7 +95,7 @@ body {
 
         display: flex;
 
-        color: white;
+        color: $color-indicator-light-white;
         filter: drop-shadow(0px 0px 0px $drop-button-shadow-from);
 
         //@include button-image-label;
@@ -103,7 +116,6 @@ body {
             transition: $login-button-transition-in;
 
             opacity: 0;
-            color: 0;
 
             @include button-image-circle-before;
 
@@ -115,6 +127,7 @@ body {
             transition: $login-button-transition-in;
 
             color: #ffc000;
+
             filter: drop-shadow(5px 5px 5px $drop-button-shadow-to);
 
             //@include button-image-label;
@@ -133,12 +146,36 @@ body {
             /* The hovered pre content element (Resides inside of the buttons circle on the left) */
             &::before {
                 transition: $login-button-transition-out;
+
                 opacity: 1;
-                color: #ffc000;
+
+                color: $color-indicator-light-orange;
 
                 @include button-image-circle-before;
 
                 content: "#";
+            }
+        }
+
+        &.validate-input {
+            filter: drop-shadow(0px 0px 0px $color-indicator-light-green-transparent);
+
+            /* The hovered Button */
+            &:hover {
+                filter: drop-shadow(5px 5px 5px $color-indicator-light-green);
+
+                &::before {
+                    content: "#";
+                }
+            }
+
+            &::before,
+            .icrate-button-label {
+                color: $color-indicator-light-green;
+            }
+
+            &::before {
+                content: "O";
             }
         }
     }
@@ -239,11 +276,17 @@ main#icrate-wrapper-main {
 
         @include cursor-initial;
 
+        #icrate-user-validation-list {
+            display: none;
+        }
+
         section.icrate-login-banner-dynamic {
             display: flex;
             width: 100%;
+
             margin: 0;
             padding: 0;
+
             border-bottom: 2px solid $ci-color-secondary;
             box-sizing: border-box;
 
@@ -253,6 +296,7 @@ main#icrate-wrapper-main {
 
             header.icrate-login-banner-text {
                 display: flex;
+
                 margin: auto;
 
                 &::before {
@@ -276,6 +320,7 @@ main#icrate-wrapper-main {
 
                 .icrate-product-name {
                     border-right: $border-within-header;
+
                     margin-right: $space-for-header;
                     margin-left: $space-for-header;
 
@@ -283,8 +328,60 @@ main#icrate-wrapper-main {
                     letter-spacing: $atomic-space-factor;
                     font-weight: 900;
                 }
+
                 .icrate-auth-status {
+                    @include unify-dimension(width, 500px);
+
+                    display: flex;
+
+                    padding: 0;
+
+                    p#icrate-auth-input-reflection,
+                    b {
+                        display: inline-flex;
+
+                        margin-top: auto;
+                        margin-bottom: auto;
+                    }
+
+                    b {
+                        font-size: 18px;
+                        letter-spacing: $atomic-space-factor;
+                    }
+
+                    p#icrate-auth-input-reflection {
+                        transition: $reflection-transition-out;
+
+                        margin-left: 15px;
+
+                        font-size: 15px;
+
+                        color: $color-indicator-light-white;
+                        letter-spacing: normal;
+
+                        &.require-input:not(.validate-input):not(.possible-input) {
+                            transition: $reflection-transition-out;
+
+                            color: $color-indicator-light-red;
+                            letter-spacing: normal;
+                        }
+
+                        &.validate-input:not(.possible-input) {
+                            transition: $reflection-transition-in;
+
+                            color: $color-indicator-light-blue;
+                            letter-spacing: $atomic-space-factor;
+                        }
+
+                        &.possible-input {
+                            transition: $reflection-transition-in;
+
+                            color: $color-indicator-light-green;
+                            letter-spacing: calc(2 * $atomic-space-factor);
+                        }
+                    }
                 }
+
                 .icrate-auth-result {
                     display: none;
                 }
@@ -292,17 +389,18 @@ main#icrate-wrapper-main {
         }
 
         form {
+            flex-direction: column;
+
             @include flex-centered-horizontal {
                 margin: auto;
             }
-            flex-direction: column;
 
             input {
                 transition: $login-button-transition-out;
 
                 margin: calc(7 * $atomic-space-factor) auto auto auto;
 
-                filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0));
+                filter: drop-shadow(6px 6px 1px rgba(0, 0, 0, 1));
 
                 font-size: 18px;
 
@@ -317,23 +415,42 @@ main#icrate-wrapper-main {
                         text-decoration: none;
                     }
 
-                    &:hover {
+                    &:hover:not(.entered-input):not(.focusing-input) {
                         transition: $login-button-transition-in;
-                        filter: drop-shadow(2px 2px 3px rgb(231, 78, 78));
+                        filter: drop-shadow(6px 6px 4px $color-indicator-dark-red);
 
                         &::placeholder {
                             transition: $login-button-transition-in;
 
-                            color: rgb(231, 78, 78);
+                            color: $color-indicator-light-red;
                             letter-spacing: calc(3 * $atomic-space-factor);
 
                             text-decoration: line-through;
                         }
                     }
 
-                    &:focus {
+                    &:focus:not(.entered-input) {
                         transition: $login-button-transition-in;
-                        filter: drop-shadow(3px 3px 2px #3bff44);
+                        filter: drop-shadow(3px 6px 1px $color-indicator-light-blue);
+
+                        &::placeholder {
+                            transition: $login-button-transition-in;
+
+                            color: rgb(231, 78, 78, 0);
+                            letter-spacing: calc(3 * $atomic-space-factor);
+
+                            text-decoration: none;
+                        }
+                    }
+
+                    &.entered-input {
+                        transition: $login-button-transition-in;
+                        filter: drop-shadow(4px 4px 1px $color-indicator-light-green);
+                    }
+
+                    &.entered-input:hover {
+                        transition: $login-button-transition-in;
+                        filter: drop-shadow(4px 4px 3px $color-indicator-light-green);
 
                         &::placeholder {
                             transition: $login-button-transition-in;
@@ -444,6 +561,12 @@ footer#icrate-wrapper-footer {
     border-top: 2px solid $ci-color-primary;
 
     background-color: $ci-color-dark;
+
+    caret-color: transparent;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
 
     p {
         @include flex-centered-horizontal;

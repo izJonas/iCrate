@@ -25,31 +25,34 @@ body * {
   font-size: 12px;
   font-weight: 700;
   line-height: 1.2em;
-  color: white;
-  outline-color: white;
-  -webkit-text-decoration-color: white;
-          text-decoration-color: white;
+  color: #ecebdd;
+  outline-color: #ecebdd;
+  -webkit-text-decoration-color: #ecebdd;
+          text-decoration-color: #ecebdd;
 }
 body input[type=text],
 body input[type=password] {
-  color: #d3aa61;
-  outline-color: #040404;
-  -webkit-text-decoration-color: #040404;
-          text-decoration-color: #040404;
-  text-shadow: 1px 1px 1.5px #040404;
+  color: #106979;
+  outline-color: #ffe96c;
+  -webkit-text-decoration-color: #ffe96c;
+          text-decoration-color: #ffe96c;
+  text-shadow: 1px 1px 1.5px #7e7c00;
 }
 body input[type=text]::-moz-placeholder, body input[type=password]::-moz-placeholder {
+  color: #9e4014;
   outline-color: #d3aa61;
   text-decoration-color: #d3aa61;
   text-shadow: 1px 1px 1.5px #f3d98f;
 }
 body input[type=text]:-ms-input-placeholder, body input[type=password]:-ms-input-placeholder {
+  color: #9e4014;
   outline-color: #d3aa61;
   text-decoration-color: #d3aa61;
   text-shadow: 1px 1px 1.5px #f3d98f;
 }
 body input[type=text]::placeholder,
 body input[type=password]::placeholder {
+  color: #9e4014;
   outline-color: #d3aa61;
   -webkit-text-decoration-color: #d3aa61;
           text-decoration-color: #d3aa61;
@@ -59,33 +62,41 @@ body *[id^=input-mandatory-description-] {
   margin-bottom: -20px;
   margin-left: 120px;
   margin-top: 25px;
-  transition: color 1s ease-in 0.1s;
-  color: rgb(36, 9, 9);
-  transition: opacity 1s ease-in 0.1s;
+  caret-color: transparent;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+  transition: all 1s ease-out 0s;
+  color: #7a0202;
   opacity: 0;
-  transition: letter-spacing 1s ease-in 0.1s;
   letter-spacing: 3px;
 }
-body *[id^=input-mandatory-description-].hovering-input {
-  transition: color 1s ease-out 0.1s;
-  color: rgb(231, 78, 78);
-  transition: opacity 1s ease-out 0.1s;
+body *[id^=input-mandatory-description-] b {
+  color: #3bff44;
+}
+body *[id^=input-mandatory-description-].hovering-input:not(.entered-input) {
+  transition: all 1s ease-out 0s;
+  color: #ff6e6e;
   opacity: 1;
-  transition: letter-spacing 1s ease-out 0.1s;
   letter-spacing: 6px;
 }
-body *[id^=input-mandatory-description-].focusing-input {
-  transition: color 1s ease-out 0.1s;
-  color: #29ac30;
-  transition: opacity 1.5s ease-out 0.3s;
+body *[id^=input-mandatory-description-].focusing-input:not(.entered-input) {
+  transition: all 1s ease-out 0s;
+  color: #2adfff;
   opacity: 1;
-  transition: letter-spacing 1s ease-out 0.1s;
   letter-spacing: 1px;
+}
+body *[id^=input-mandatory-description-].entered-input {
+  transition: all 1s ease-out 0s;
+  color: #3bff44;
+  opacity: 1;
+  letter-spacing: 3px;
 }
 body button {
   transition: all 1s ease-in 0.1s;
   display: flex;
-  color: white;
+  color: #ecebdd;
   filter: drop-shadow(0px 0px 0px rgba(255, 192, 0, 0.1));
   /* The not hovered Button Label */
   /* The not hovered pre content element (Resides inside of the buttons circle on the left) */
@@ -106,7 +117,6 @@ body button .icrate-button-label {
 body button::before {
   transition: all 1s ease-out 0s;
   opacity: 0;
-  color: 0;
   display: flex;
   box-sizing: content-box;
   font-family: "Orbitron", sans-serif;
@@ -127,7 +137,7 @@ body button::before {
 body button:hover {
   transition: all 1s ease-out 0s;
   color: #ffc000;
-  filter: drop-shadow(5px 5px 5px rgb(237, 125, 49));
+  filter: drop-shadow(5px 5px 5px #ed7d31);
   /* The hovered Button Label */
   /* The hovered pre content element (Resides inside of the buttons circle on the left) */
 }
@@ -146,7 +156,7 @@ body button:hover .icrate-button-label {
 body button:hover::before {
   transition: all 1s ease-in 0.1s;
   opacity: 1;
-  color: #ffc000;
+  color: #ed7d31;
   display: flex;
   box-sizing: content-box;
   font-family: "Orbitron", sans-serif;
@@ -163,6 +173,23 @@ body button:hover::before {
   justify-items: flex-start;
   justify-content: flex-start;
   content: "#";
+}
+body button.validate-input {
+  filter: drop-shadow(0px 0px 0px rgba(59, 255, 68, 0));
+  /* The hovered Button */
+}
+body button.validate-input:hover {
+  filter: drop-shadow(5px 5px 5px #3bff44);
+}
+body button.validate-input:hover::before {
+  content: "#";
+}
+body button.validate-input::before,
+body button.validate-input .icrate-button-label {
+  color: #3bff44;
+}
+body button.validate-input::before {
+  content: "O";
 }
 body #cto-indoctrination-observer {
   position: absolute;
@@ -288,6 +315,9 @@ main#icrate-wrapper-main #icrate-wrapper-login {
   height: calc(100% - 4em - 25px);
   cursor: url("/img/svg/mouse/cursor-initial-white.svg"), auto;
 }
+main#icrate-wrapper-main #icrate-wrapper-login #icrate-user-validation-list {
+  display: none;
+}
 main#icrate-wrapper-main #icrate-wrapper-login section.icrate-login-banner-dynamic {
   display: flex;
   width: 100%;
@@ -330,20 +360,59 @@ main#icrate-wrapper-main #icrate-wrapper-login section.icrate-login-banner-dynam
   letter-spacing: 3px;
   font-weight: 900;
 }
+main#icrate-wrapper-main #icrate-wrapper-login section.icrate-login-banner-dynamic header.icrate-login-banner-text .icrate-auth-status {
+  width: 500px;
+  max-width: 500px;
+  min-width: 500px;
+  display: flex;
+  padding: 0;
+}
+main#icrate-wrapper-main #icrate-wrapper-login section.icrate-login-banner-dynamic header.icrate-login-banner-text .icrate-auth-status p#icrate-auth-input-reflection,
+main#icrate-wrapper-main #icrate-wrapper-login section.icrate-login-banner-dynamic header.icrate-login-banner-text .icrate-auth-status b {
+  display: inline-flex;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+main#icrate-wrapper-main #icrate-wrapper-login section.icrate-login-banner-dynamic header.icrate-login-banner-text .icrate-auth-status b {
+  font-size: 18px;
+  letter-spacing: 3px;
+}
+main#icrate-wrapper-main #icrate-wrapper-login section.icrate-login-banner-dynamic header.icrate-login-banner-text .icrate-auth-status p#icrate-auth-input-reflection {
+  transition: all 3s ease-in 0.1s;
+  margin-left: 15px;
+  font-size: 15px;
+  color: #ecebdd;
+  letter-spacing: normal;
+}
+main#icrate-wrapper-main #icrate-wrapper-login section.icrate-login-banner-dynamic header.icrate-login-banner-text .icrate-auth-status p#icrate-auth-input-reflection.require-input:not(.validate-input):not(.possible-input) {
+  transition: all 3s ease-in 0.1s;
+  color: #ff6e6e;
+  letter-spacing: normal;
+}
+main#icrate-wrapper-main #icrate-wrapper-login section.icrate-login-banner-dynamic header.icrate-login-banner-text .icrate-auth-status p#icrate-auth-input-reflection.validate-input:not(.possible-input) {
+  transition: all 3s ease-out 0.2s;
+  color: #2adfff;
+  letter-spacing: 3px;
+}
+main#icrate-wrapper-main #icrate-wrapper-login section.icrate-login-banner-dynamic header.icrate-login-banner-text .icrate-auth-status p#icrate-auth-input-reflection.possible-input {
+  transition: all 3s ease-out 0.2s;
+  color: #3bff44;
+  letter-spacing: 6px;
+}
 main#icrate-wrapper-main #icrate-wrapper-login section.icrate-login-banner-dynamic header.icrate-login-banner-text .icrate-auth-result {
   display: none;
 }
 main#icrate-wrapper-main #icrate-wrapper-login form {
+  flex-direction: column;
   display: flex;
   margin-left: auto;
   margin-right: auto;
   margin: auto;
-  flex-direction: column;
 }
 main#icrate-wrapper-main #icrate-wrapper-login form input {
   transition: all 1s ease-in 0.1s;
   margin: 21px auto auto auto;
-  filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0));
+  filter: drop-shadow(6px 6px 1px rgb(0, 0, 0));
   font-size: 18px;
 }
 main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory::-moz-placeholder {
@@ -366,49 +435,77 @@ main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory
   letter-spacing: 3px;
   text-decoration: none;
 }
-main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory:hover {
+main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory:hover:not(.entered-input):not(.focusing-input) {
   transition: all 1s ease-out 0s;
-  filter: drop-shadow(2px 2px 3px rgb(231, 78, 78));
+  filter: drop-shadow(6px 6px 4px #7a0202);
 }
-main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory:hover::-moz-placeholder {
+main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory:hover:not(.entered-input):not(.focusing-input)::-moz-placeholder {
   -moz-transition: all 1s ease-out 0s;
   transition: all 1s ease-out 0s;
-  color: rgb(231, 78, 78);
+  color: #ff6e6e;
   letter-spacing: 9px;
   text-decoration: line-through;
 }
-main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory:hover:-ms-input-placeholder {
+main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory:hover:not(.entered-input):not(.focusing-input):-ms-input-placeholder {
   -ms-transition: all 1s ease-out 0s;
   transition: all 1s ease-out 0s;
-  color: rgb(231, 78, 78);
+  color: #ff6e6e;
   letter-spacing: 9px;
   text-decoration: line-through;
 }
-main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory:hover::placeholder {
+main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory:hover:not(.entered-input):not(.focusing-input)::placeholder {
   transition: all 1s ease-out 0s;
-  color: rgb(231, 78, 78);
+  color: #ff6e6e;
   letter-spacing: 9px;
   text-decoration: line-through;
 }
-main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory:focus {
+main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory:focus:not(.entered-input) {
   transition: all 1s ease-out 0s;
-  filter: drop-shadow(3px 3px 2px #29ac30);
+  filter: drop-shadow(3px 6px 1px #2adfff);
 }
-main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory:focus::-moz-placeholder {
+main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory:focus:not(.entered-input)::-moz-placeholder {
   -moz-transition: all 1s ease-out 0s;
   transition: all 1s ease-out 0s;
   color: rgba(231, 78, 78, 0);
   letter-spacing: 9px;
   text-decoration: none;
 }
-main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory:focus:-ms-input-placeholder {
+main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory:focus:not(.entered-input):-ms-input-placeholder {
   -ms-transition: all 1s ease-out 0s;
   transition: all 1s ease-out 0s;
   color: rgba(231, 78, 78, 0);
   letter-spacing: 9px;
   text-decoration: none;
 }
-main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory:focus::placeholder {
+main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory:focus:not(.entered-input)::placeholder {
+  transition: all 1s ease-out 0s;
+  color: rgba(231, 78, 78, 0);
+  letter-spacing: 9px;
+  text-decoration: none;
+}
+main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory.entered-input {
+  transition: all 1s ease-out 0s;
+  filter: drop-shadow(4px 4px 1px #3bff44);
+}
+main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory.entered-input:hover {
+  transition: all 1s ease-out 0s;
+  filter: drop-shadow(4px 4px 3px #3bff44);
+}
+main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory.entered-input:hover::-moz-placeholder {
+  -moz-transition: all 1s ease-out 0s;
+  transition: all 1s ease-out 0s;
+  color: rgba(231, 78, 78, 0);
+  letter-spacing: 9px;
+  text-decoration: none;
+}
+main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory.entered-input:hover:-ms-input-placeholder {
+  -ms-transition: all 1s ease-out 0s;
+  transition: all 1s ease-out 0s;
+  color: rgba(231, 78, 78, 0);
+  letter-spacing: 9px;
+  text-decoration: none;
+}
+main#icrate-wrapper-main #icrate-wrapper-login form input.icrate-input-mandatory.entered-input:hover::placeholder {
   transition: all 1s ease-out 0s;
   color: rgba(231, 78, 78, 0);
   letter-spacing: 9px;
@@ -498,6 +595,11 @@ footer#icrate-wrapper-footer {
   right: 0;
   border-top: 2px solid #f3d98f;
   background-color: #040404;
+  caret-color: transparent;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
 }
 footer#icrate-wrapper-footer p {
   display: flex;

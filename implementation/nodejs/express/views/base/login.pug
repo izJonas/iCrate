@@ -4,8 +4,8 @@ block icrate-content
     div(id="icrate-wrapper-login")
         section(class="icrate-login-banner-dynamic")
             header(class="icrate-login-banner-text")
-                .icrate-product-name iCrate
-                .icrate-auth-status Login erforderlich!
+                .icrate-product-name(onclick="toggleDebugMode()") iCrate
+                .icrate-auth-status <b>Login:</b> <p id="icrate-auth-input-reflection" class="require-input">Eingaben erforlerlich!</p>
                 .icrate-auth-result Login fehlgeschlagen!
         form(
             action="/login"
@@ -21,7 +21,9 @@ block icrate-content
                 onmouseleave="processMouseLeaveTransitionClass(this)"
                 onfocus="signalizeCorrectness(this)"
                 onfocusout="revertCorrectness(this)"
-                onchange="changedContent(this)"
+                oninput="checkUserNameBlankness(this)"
+                onchange="insertedUserName(this)"
+                onkeydown="checkDeletionInProgress(this, event)"
                 class="icrate-input-text icrate-input-mandatory"
                 required
             )
@@ -35,7 +37,9 @@ block icrate-content
                 onmouseleave="processMouseLeaveTransitionClass(this)"
                 onfocus="signalizeCorrectness(this)"
                 onfocusout="revertCorrectness(this)"
-                onchange="changedContent(this)"
+                oninput="changedContent(this, false, false)"
+                onchange="changedContent(this, true, false)"
+                onkeydown="checkDeletionInProgress(this, event)"
                 class="icrate-input-password icrate-input-mandatory"
                 required
             )
@@ -45,7 +49,6 @@ block icrate-content
             )
                 .icrate-button-label Login
 
-        //-#quotes-wrapper
-            ul
+            #icrate-user-validation-list
                 each val in userlist
-                    li!= 'User <span class="quote-name">' + val['name'] + '</span> has the password: <span class="quote-content">' + val['password'] + '</span>'
+                    .icrate-user-entry= val['name']

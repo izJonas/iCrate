@@ -56,12 +56,18 @@ $login-button-transition-even: all 0.85s ease 0.05s;
 //$login-button-transition-out: $login-button-transition-even;
 //$login-button-transition-in: $login-button-transition-even;
 
+$reflection-transition-out: all 3s ease-in 0.1s;
+$reflection-transition-in: all 3s ease-out 0.2s;
+
+$color-indicator-light-white: #ecebdd;
 $color-indicator-light-red: #ff6e6e;
 $color-indicator-light-green: #3bff44;
+$color-indicator-light-green-transparent: #3bff4400;
 $color-indicator-light-blue: #2adfff;
 $color-indicator-light-orange: #ed7d31;
 $color-indicator-light-yellow: #ffe96c;
 
+$color-indicator-dark-white: #b4b3af;
 $color-indicator-dark-red: #7a0202;
 $color-indicator-dark-green: #08720e;
 $color-indicator-dark-blue: #106979;
