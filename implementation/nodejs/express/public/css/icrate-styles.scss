@@ -190,6 +190,7 @@ body {
         > *[class^="cto-"] {
             display: flex;
         }
+        /*
         .cto-tactic-usage {
         }
 
@@ -198,6 +199,7 @@ body {
 
         .cto-strategy-indicator {
         }
+        */
     }
 
     /* Interactive Component, fortifying a surrounding with the input elements in the middle / detection range */
@@ -211,6 +213,7 @@ body {
             display: flex;
         }
 
+        /*
         .hzd-barrier-health {
         }
 
@@ -219,6 +222,7 @@ body {
 
         .hzd-trapping-indicator {
         }
+        */
     }
 
     /* Interactive Component, fortifying a surrounding with the input elements in the middle / detection range */
@@ -232,6 +236,7 @@ body {
             display: flex;
         }
 
+        /*
         .fae-attack-vector {
         }
 
@@ -240,6 +245,7 @@ body {
 
         .fae-weapon-indicator {
         }
+        */
     }
 }
 
@@ -482,27 +488,39 @@ main#icrate-wrapper-main {
 
     /* Konfiguration Sitelist */
     // My Profile
+    /*
     #icrate-wrapper-conf-profile {
     }
+    */
 
     /* Module Overview */
     // List of Applications
     #icrate-wrapper-modview {
+
+        display: flex;
         // The Applist shown as Cards
+        /*
         &.cards {
         }
+        */
 
         // The Applist as List-Of-Lines (Single Lines)
+        /*
         &.lines {
         }
+        */
 
         // The Applist shown like Ghost-Buttons
+        /*
         &.ghosts {
         }
+        */
 
         // Surprise (procedural creation) Mode is active
+        /*
         &.surprise-me {
         }
+        */
     }
 
     /* Application Views */
@@ -525,6 +543,7 @@ main#icrate-wrapper-main {
             }
         }
 
+        /*
         // Für Kunden: Liste aller PDFs als download
         &.purchase-order-projector-customer {
         }
@@ -536,6 +555,7 @@ main#icrate-wrapper-main {
         // Angebotserstellung: Einfügen von bestimmten Platzhalterfeldern (z.B. Datum) an einer oder mehreren Stellen einer Word-Vorlage.
         &.purchase-order-creator-iz {
         }
+        */
     }
 
     /* Responsiveness */
