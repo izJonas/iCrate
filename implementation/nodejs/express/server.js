@@ -2,16 +2,16 @@
 console.log('May Node be with you')
 
 // express Framework gets loaded first
-const express = require('express');
-const path = require('path');
+const express = require('express')
+const path = require('path')
 const bodyParser = require('body-parser')
 const MongoClient = require('mongodb').MongoClient
-const app = express();
+const app = express()
 
 let db
-let usersCollection8
+let usersCollection
 
-const connectionString = 'mongodb+srv://icrate-admin:test@cluster0.sjlt1ts.mongodb.net/?retryWrites=true&w=majority'
+const connectionString = 'mongodb+srv://iz-admin:g837upv5LPUpkmA@impactzonecluster.z5yncht.mongodb.net/?retryWrites=true&w=majority'
 
 const SetViewEngine = function () {
     // Set the pug view engine
@@ -44,8 +44,8 @@ const AfterMongoConnect = function (collectionToUse) {
     // Make sure you place body-parser before your CRUD handlers!
     app.use(bodyParser.urlencoded({ extended: true }))
 
-    app.listen(3000, function () {
-        console.log('listening on 3000')
+    app.listen(3001, function () {
+        console.log('listening on 3001')
     })
 
     app.get('/', (req, res) => {
